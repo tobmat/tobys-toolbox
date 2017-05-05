@@ -59,7 +59,7 @@ call plug#end()
 
 #### Plugins I use
 
-###### Nerdtree:
+###### Nerdtree - vim file manager, can open multiple files at ones
 
 Setup  - I have the following pieces in my ~/.vimrc file:
 
@@ -121,6 +121,39 @@ O: recurs­ively open
 x: close parent
 X: close all children recurs­ively
 e: explore selected dir
+```
+
+###### Syntastic - checks syntax for many common scripting languages
+
+~/.vimrc setup
+
+```
+" Syntastic Settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+```
+
+---
+
+#### ~/.vimrc
+
+vimrc file setup to customize vim.  Here are the current ones I'm using:
+
+```
+" turn off smart indentation when pasting - this will turn off auto comment and indent when pasting
+set pastetoggle=<F2>
+
+" default to paste mode
+set paste
+
+" shortcut to turn off line numbers
+map <silent> con :set number!<CR>
 ```
 
 

@@ -55,6 +55,8 @@ Plug 'scrooloose/syntastic'
 call plug#end()
 ```
 
+###### Note - I currently setup vim via ansible
+
 ---
 
 #### Plugins I use

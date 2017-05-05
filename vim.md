@@ -28,19 +28,54 @@ show end of line:
 
 ---
 
-#### Plugin Manager Setup
+#### Plugin Manager Setup - This is for vimplug
 
-Setup plugin manager:
+Find instructions here:  [https://github.com/junegunn/vim-plug](https://github.com/junegunn/vim-plug) OR
+
+Setup ~/.vimrc file to autoinstall vim-plug, and autoload plugin files:
 
 ```
+" Silent vim-plug setup and initial PlugInstall
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
+call plug#begin('~/.vim/plugged')
 
+" Color schemes
+Plug 'altercation/vim-colors-solarized'
+
+" UI
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+
+" Initialize plugin system
+call plug#end()
 ```
 
 ---
 
 #### Plugins I use
 
-Nerdtree:
+###### Nerdtree:
+
+Setup  - I have the following pieces in my ~/.vimrc file:
+
+```
+"Show hidden files in NerdTree
+"let NERDTreeShowHidden=1
+
+"autopen NERDTree and focus cursor in new document
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd p
+
+" Give a shortcut key to NERD Tree
+map <F2> :NERDTreeToggle<CR>
+```
+
+Cheatsheet
 
 ```
 Lets open some windows

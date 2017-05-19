@@ -60,7 +60,7 @@ Default principal: toby.matherly@CLOUDHUB.LOCAL
 
 Valid starting       Expires              Service principal
 05/19/2017 15:19:46  05/20/2017 01:19:46  krbtgt/CLOUDHUB.LOCAL@CLOUDHUB.LOCAL
-	renew until 05/26/2017 15:19:43
+    renew until 05/26/2017 15:19:43
 ```
 
 ##### Test winrm:
@@ -71,6 +71,22 @@ win-jump-east02.cloudhub.local | SUCCESS => {
     "changed": false,
     "ping": "pong"
 }
+```
+
+#### Basic windows playbook to run powershell script:
+
+```
+- name: test
+  hosts: windows
+
+  vars_prompt:
+    - name: "ansible_ssh_pass"
+      prompt: "windows password"
+      private: yes
+
+  tasks:
+    - name: run test script
+      script: test_script.ps1
 ```
 
 

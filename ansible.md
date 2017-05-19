@@ -12,29 +12,12 @@
 
 #### ansible server
 
-yum -y install python-devel krb5-devel krb5-libs krb5-workstation
-
 1. yum -y install gcc python-devel krb5-devel krb5-workstation
+2. pip install [https://github.com/diyan/pywinrm/archive/master.zip\#egg=pywinrm](https://github.com/diyan/pywinrm/archive/master.zip#egg=pywinrm)
+3. pip install python-kerberos
+4. pip install requests-kerberos
 
-
-
-pip install pywinrm\[kerberos\]
-
-2. pip install https://github.com/diyan/pywinrm/archive/master.zip\#egg=pywinrm
-
-
-
-pip install python-kerberos
-
-yum install python-kerberos
-
-
-
-pip install requests-kerberos
-
-
-
-create windows inventory file containing the following 
+##### create windows inventory file containing the following:
 
 ```
 [windows]
@@ -44,8 +27,51 @@ win-jump-east02.cloudhub.local
  ansible_ssh_user=toby.matherly@CLOUDHUB.LOCAL
  #ansible_ssh_pass=passwordhere
  ansible_ssh_port=5985
- ansible_connection=winrm
 ```
 
-Change /etc/resolv.conf to use same DNS server as windows server you are trying to access \(for AWS\)
+##### Change /etc/resolv.conf to use same DNS server as windows server you are trying to access \(for AWS\)
+
+##### Update /etc/krb5.conf and change the following sections: \(kdc is pointing to domain controller of windows instance
+
+```
+[realms]
+ CLOUDHUB.LOCAL = {
+  kdc = win-ct1jf3e6fce.cloudhub.local
+  admin_server = win-ct1jf3e6fce.cloudhub.local
+ }
+
+[domain_realm]
+ .cloudhub.local = CLOUDHUB.LOCAL
+ cloudhub.local = CLOUDHUB.LOCAL
+```
+
+##### Create a keberos ticket:
+
+```
+kinit toby.matherly@CLOUDHUB.LOCAL
+```
+
+##### Validate ticket:
+
+```
+klist
+Ticket cache: KEYRING:persistent:0:0
+Default principal: toby.matherly@CLOUDHUB.LOCAL
+
+Valid starting       Expires              Service principal
+05/19/2017 15:19:46  05/20/2017 01:19:46  krbtgt/CLOUDHUB.LOCAL@CLOUDHUB.LOCAL
+	renew until 05/26/2017 15:19:43
+```
+
+##### Test winrm:
+
+```
+ansible win-jump-east02.cloudhub.local -m win_ping -i win-inventory
+win-jump-east02.cloudhub.local | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+```
+
+
 

@@ -19,8 +19,7 @@ rails runner tools/db_ping_remote.rb
 
 #### Helpful SQL commands:
 
-Count of items on miq\_queue:  
-
+Count of items on miq\_queue:
 
 ```
 select COUNT(*) from miq_queue;
@@ -36,6 +35,12 @@ Items on miq\_queue in error state:
 
 ```
 select id,priority,method_name,state,queue_name,zone,role,created_on,class_name from miq_queue where state = 'error';
+```
+
+Get entries prior to x date:
+
+```
+select * from miq_queue where created_on < '2016-12-31';
 ```
 
 Get unique values from a field:

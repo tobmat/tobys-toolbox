@@ -55,5 +55,22 @@ select distinct zone from miq_queue;
 2. Select the zone the server is in.
 3. Select Configuration and Delete Server xxxxxxx
 
+#### Test DB Latency:
+
+```
+vmdb
+rails runner tools/db_ping.rb
+```
+
+#### Rake commands:
+
+```
+vmdb
+rake --tasks evm    # list all available rake tasks in evm namespace
+rake --tasks atg    # list all custom rake tasks in atg namespace
+rake --tasks        # list all available rake tasks
+rake evm:status     # Report status of ManageIQ EVM application
+```
+
 
 

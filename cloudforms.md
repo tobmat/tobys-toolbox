@@ -1,49 +1,57 @@
 #### Design Considerations:
 
-Database should be configured for high availability and disaster recovery
+###### Database should be configured for high availability and disaster recovery
 
 #### Helpful commands:
 
-Check latency to database within region:
+###### Check latency to database within region:
 
 ```
 vmdb
 rails runner tools/db_ping.rb
 ```
 
-Check inter-region latency:
+###### Check inter-region latency:
 
 ```
+vmdb
 rails runner tools/db_ping_remote.rb
 ```
 
 #### Helpful SQL commands:
 
-Count of items on miq\_queue:
+###### Enter Rails db session to enter SQL commands:
+
+```
+vmdb
+rails db  # This will require password
+```
+
+###### Count of items on miq\_queue:
 
 ```
 select COUNT(*) from miq_queue;
 ```
 
-Current items on the miq\_queue:
+###### Current items on the miq\_queue:
 
 ```
 select id,priority,method_name,state,queue_name,zone,role,created_on,class_name from miq_queue;
 ```
 
-Items on miq\_queue in error state:
+###### Items on miq\_queue in error state:
 
 ```
 select id,priority,method_name,state,queue_name,zone,role,created_on,class_name from miq_queue where state = 'error';
 ```
 
-Get entries prior to x date:
+###### Get entries prior to x date:
 
 ```
 select * from miq_queue where created_on < '2016-12-31';
 ```
 
-Get unique values from a field:
+###### Get unique values from a field:
 
 ```
 select distinct zone from miq_queue;

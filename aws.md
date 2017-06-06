@@ -12,13 +12,27 @@ export AWS\_SECRET\_ACCESS\_KEY=
 
 export AWS\_ACCESS\_KEY\_ID=
 
+#### iam commands
+
+###### List security groups that have wide open ip rules and only return certain values with query:
+
+```
+aws ec2 describe-security-groups --filters Name=ip-permission.cidr,Values='0.0.0.0/0' --query 'SecurityGroups[*].{Name:GroupName,VPCID:VpcId,SecurityGroupName:GroupId}'
+```
+
+###### List Users in text format:
+
+```
+aws iam list-users --output text  # other valid options are table, and json(default)
+```
+
 #### **route53 commands**
 
-**List all zones:**
+###### **List all zones:**
 
 `aws route53 list-hosted-zones`
 
-**List all records in zone:**
+###### **List all records in zone:**
 
 `aws route53 list-resource-record-sets --hosted-zone-id <id>`
 
@@ -72,9 +86,12 @@ export AWS\_ACCESS\_KEY\_ID=
 ```
 {
   "Version": "2008-10-17",
-  "Statement": [{"Sid": "AllowPublicRead",
+  "Statement": [{
+"Sid": "AllowPublicRead",
   "Effect": "Allow",
-  "Principal": {"AWS": "*"},
+  "Principal": {
+"AWS": "*"
+},
   "Action": [ "s3:GetObject" ],
   "Resource": [ "arn:aws:s3:::MY_BUCKET_NAME/*" ]
   }]

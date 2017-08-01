@@ -63,6 +63,13 @@ select distinct zone from miq_queue;
 2. Select the zone the server is in.
 3. Select Configuration and Delete Server xxxxxxx
 
+```
+Note - This is actually doing a destroy which can take a really long time due to deleting all events 
+associated with an appliance.  To delete only the server out of the DB you can issue this command:
+
+MiqServer.where(:id=> 100000000000002).take.delete
+```
+
 #### Test DB Latency:
 
 ```
@@ -78,6 +85,13 @@ rake --tasks evm    # list all available rake tasks in evm namespace
 rake --tasks atg    # list all custom rake tasks in atg namespace
 rake --tasks        # list all available rake tasks
 rake evm:status     # Report status of ManageIQ EVM application
+```
+
+API info:
+
+```
+'r' is shorthand for all 0's in a number.  For example 100000000000007 can be referred to as 1r7 
+in scripting or API calls.
 ```
 
 

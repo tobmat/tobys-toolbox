@@ -8,4 +8,6 @@
 * [VIM](vim.md)
 * [Docker](docker.md)
 * [Node.js](nodejs.md)
+* [Linux Networking](linux-networking.md)
+* [Openshift](openshift.md)
 

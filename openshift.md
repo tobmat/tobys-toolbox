@@ -49,7 +49,7 @@ export PATH="/root/.minishift/cache/oc/v1.5.1:$PATH"
 ```
 virsh iface-bridge enp0s20f0 br0  # this creates the br0 bridge and update enp0s20f0 interface to point to 
                                   # the new bridge.  It creates the files in network-scripts and restarts network.
-                                  
+
 #review bridge
 brctl show
 ```
@@ -80,6 +80,7 @@ vi /var/lib/minishift/openshift.local.config/master/master-config.yaml
 masterPublicURL: https://192.168.88.233:8443
   assetPublicURL: https://192.168.88.233:8443/console/
   masterPublicURL: https://192.168.88.233:8443
+  subdomain: 192.168.88.233.nip.io
   
 exit
 exit

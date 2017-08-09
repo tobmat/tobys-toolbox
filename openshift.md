@@ -44,15 +44,17 @@ minishift oc-env
 export PATH="/root/.minishift/cache/oc/v1.5.1:$PATH"
 ```
 
-Setup linux bridge to be able to access minishift from network:
+##### Setup linux bridge to be able to access minishift from network:
 
 ```
 virsh iface-bridge enp0s20f0 br0  # this creates the br0 bridge and update enp0s20f0 interface to point to 
                                   # the new bridge.  It creates the files in network-scripts and restarts network.
                                   
+#review bridge
+brctl show
 ```
 
-Replace default network on minishift vm with bridge interface:
+##### Replace default network on minishift vm with bridge interface:
 
 ```
 virsh edit minishift
@@ -61,18 +63,28 @@ virsh edit minishift
  <interface type='bridge'>
     <source bridge='br0'/>
  </interface>
- 
 ```
 
-Update openshift config to use public network:
+##### Update openshift config to use public network:
 
 ```
 minishift ssh
 # determine public ip
+ip a # find ip on public network
 sudo -i
 vi /var/lib/minishift/openshift.local.config/master/master-config.yaml
 
-
+# find and replace this values with public ip
+  masterPublicURL: https://192.168.88.233:8443
+  publicURL: https://192.168.88.233:8443/console/
+masterPublicURL: https://192.168.88.233:8443
+  assetPublicURL: https://192.168.88.233:8443/console/
+  masterPublicURL: https://192.168.88.233:8443
+  
+exit
+exit
+minishift stop
+minishift start
 ```
 
 

@@ -81,11 +81,29 @@ masterPublicURL: https://192.168.88.233:8443
   assetPublicURL: https://192.168.88.233:8443/console/
   masterPublicURL: https://192.168.88.233:8443
   subdomain: 192.168.88.233.nip.io
-  
+
 exit
 exit
 minishift stop
 minishift start
+```
+
+Troubleshooting
+
+The project in the book to launch the docker image for tomcat was failing / restarting when I tried to bring it up.
+
+```
+oc status -v   # this command provides troubleshooting steps.  In this case the default security policy
+               # prevented containers from being run as root user which happens to be required for tomcat8.
+
+#They suggested running this command:
+#oadm policy add-scc-to-user anyuid -n tomcat8 -z default
+
+# The problem is oadm is not available in minishift but you can use the following command instead:
+oc adm policy add-scc-to-user anyuid -n tomcat8 -z default
+
+#NOTE - need to use this login first:
+oc login -u system:admin
 ```
 
 

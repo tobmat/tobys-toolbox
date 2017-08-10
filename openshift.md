@@ -88,7 +88,24 @@ minishift stop
 minishift start
 ```
 
-Troubleshooting
+##### Webhooks:
+
+For testing in lab that is not internet facing I used [ultrahook.](http://www.ultrahook.com/)
+
+```
+# it is a gem so to prep centos7 I installed the following
+
+yum install ruby-devel ruby gcc -y
+
+# follow install instructions on site
+
+ultrahook testhook https://192.168.88.233:8443/oapi/v1/namespaces/wfproject/buildconfigs/helloworld/webhooks/53ac93c7cb5d214c/github
+
+# this will create a webhook and provide the url to put in at github
+# the url you use is from openshift project created
+```
+
+##### Troubleshooting
 
 The project in the book to launch the docker image for tomcat was failing / restarting when I tried to bring it up.
 

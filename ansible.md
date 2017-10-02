@@ -89,5 +89,20 @@ win-jump-east02.cloudhub.local | SUCCESS => {
       script: test_script.ps1
 ```
 
+### Ansible Tower
+
+#### Bastion Host
+
+* SSH into tower and copy Bastion Host key
+* Add following variables to inventory, group , or instance you need to use bastion host on:
+
+```
+---
+ansible_ssh_common_args: '-o ProxyCommand="ssh -o StrictHostKeyChecking=no -W %h:%p -q user@jumphost"'
+ansible_ssh_private_key_file: '/etc/config/private_key_file'
+```
+
+* Add credential for hosts you are going to access via jump server
+
 
 

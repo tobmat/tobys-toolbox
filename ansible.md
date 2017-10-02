@@ -93,16 +93,39 @@ win-jump-east02.cloudhub.local | SUCCESS => {
 
 #### Bastion Host
 
-* SSH into tower and copy Bastion Host key
+* SSH into tower and copy Bastion Host key, I put in /etc/ansible 
+* give ownership of the key to awx and set proper permissions:
+
+```
+sudo chown awx:awx /etc/ansible/private_key_file
+chmod 600 /etc/ansible/private_key_file
+```
+
 * Add following variables to inventory, group , or instance you need to use bastion host on:
 
 ```
 ---
 ansible_ssh_common_args: '-o ProxyCommand="ssh -o StrictHostKeyChecking=no -W %h:%p -q user@jumphost"'
-ansible_ssh_private_key_file: '/etc/config/private_key_file'
+ansible_ssh_private_key_file: '/etc/ansible/private_key_file'
 ```
 
 * Add credential for hosts you are going to access via jump server
+* default playbook should have hosts: all and then control with limits in tower
+
+#### Import existing inventories / variables into tower
+
+* see tips and tricks below
+* create empty inventory in tower
+* On tower server copy an existing inventory structure in inventory/ directory
+* execute this command:
+
+```
+tower-manage inventory_import --source=inventory/ --inventory-name="<inventory name>"
+```
+
+#### Tips and Tricks
+
+[http://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html](http://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html)
 
 
 

@@ -123,5 +123,40 @@ oc adm policy add-scc-to-user anyuid -n tomcat8 -z default
 oc login -u system:admin
 ```
 
+# AWS Openshift
+
+[https://aws.amazon.com/about-aws/whats-new/2016/06/red-hat-openshift-on-the-aws-cloud-quick-start-reference-deployment/](https://aws.amazon.com/about-aws/whats-new/2016/06/red-hat-openshift-on-the-aws-cloud-quick-start-reference-deployment/)
+
+##### Add CNAME entry for elb:
+
+for example: openshiftdev.oncaas.com
+
+##### Add wildcard cert:
+
+1. log into each master instance
+2. copy wildcard.crt and wildcard.key to /etc/origin/master
+3. update master config file \(/etc/origin/master/master-config.yaml\)
+4. replace elb name for CNAME entry above.  Search public to find all entries
+5. Add code to end of following sections: assetConfig, servingInfo
+
+```
+    namedCertificates:
+      - certFile: wildcard.example.com.crt
+        keyFile: wildcard.example.com.key
+        names:
+          - "openshift.example.com"6.
+```
+
+    6. Restart atomic-openshift-master-api service
+
+```
+systemctl restart atomic-openshift-master-api
+```
+
+##### Add new users:
+
+created a script to add new users from file:  
+
+
 
 

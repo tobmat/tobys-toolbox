@@ -196,7 +196,14 @@ htpasswd -D /etc/origin/master/htpasswd Brent.Rager
 # change pw
 htpasswd /etc/origin/master/htpasswd admin
 
+# get users
+oc get users
+```
 
+##### Login with command line tool:
+
+```
+oc login https://<openshift_url>:8443 -u username
 ```
 
 

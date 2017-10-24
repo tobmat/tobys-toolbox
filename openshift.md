@@ -198,6 +198,10 @@ htpasswd /etc/origin/master/htpasswd admin
 
 # get users
 oc get users
+
+# pass password on command line
+htpasswd -b  /etc/origin/master/htpasswd admin
+
 ```
 
 ##### Login with command line tool:

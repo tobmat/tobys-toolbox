@@ -201,13 +201,15 @@ oc get users
 
 # pass password on command line
 htpasswd -b  /etc/origin/master/htpasswd admin
-
 ```
 
 ##### Login with command line tool:
 
 ```
 oc login https://<openshift_url>:8443 -u username
+
+# logout
+oc logout
 ```
 
 

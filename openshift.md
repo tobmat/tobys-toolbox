@@ -147,16 +147,57 @@ for example: openshiftdev.oncaas.com
           - "openshift.example.com"6.
 ```
 
-    6. Restart atomic-openshift-master-api service
+1. Restart atomic-openshift-master-api service
 
 ```
 systemctl restart atomic-openshift-master-api
 ```
 
-##### Add new users:
+##### Add new users \(must run on all master instances\):
 
-created a script to add new users from file:  
+created a script to add new users from file:
 
+```
+##contents of new_users.sh
+
+# add new users
+while read line; do
+  name=$(echo $line | cut -d "," -f 1)
+  password=$(echo $line | cut -d "," -f 2)
+  echo "add $name with password $password"
+  #htpasswd -b /etc/origin/master/htpasswd $name $password
+  htpasswd -D /etc/origin/master/htpasswd $name
+done < $1
+
+## contents of user.txt input file format
+
+username,password
+
+## add users to cluster-admin role
+
+# add users to role
+while read line; do
+  name=$(echo $line | cut -d "," -f 1)
+  echo "add $name to cluster-admin role"
+  oadm policy add-role-to-user cluster-admin $name
+done < $1
+```
+
+##### Helpful commands:
+
+```
+# validate user pw
+htpasswd -v  /etc/origin/master/htpasswd admin
+
+# delete user
+oc delete identity htpasswd_auth:Brent.Rager
+htpasswd -D /etc/origin/master/htpasswd Brent.Rager
+
+# change pw
+htpasswd /etc/origin/master/htpasswd admin
+
+
+```
 
 
 

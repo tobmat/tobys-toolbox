@@ -10,6 +10,6 @@
 * [Node.js](nodejs.md)
 * [Linux Networking](linux-networking.md)
 * [Openshift](openshift.md)
-* Git
-*      Reference
+* [Git](git.md)
+  * [Reference](git/reference.md)
 

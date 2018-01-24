@@ -3,6 +3,7 @@
 * [Introduction](README.md)
 * [Ansible](ansible.md)
 * [AWS](aws.md)
+  * [Recover EC2 Instance without key file](aws/recover-ec2-instance-without-key-file.md)
 * [Chrony](chrony.md)
 * [VIM](vim.md)
 * [Cloudforms](cloudforms.md)

@@ -12,4 +12,5 @@
 * [Openshift](openshift.md)
 * [Git](git.md)
   * [Feature Branch](git/reference.md)
+  * [Development Process](git/development-process.md)
 

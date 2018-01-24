@@ -28,10 +28,6 @@ Here is a breakdown from a command line perspective:
 
 
 
-\# push changes back
-
-$ git push
-
 \# merge feature branch, --no-ffflag causes the merge to always create a new commit object
 
 $ git checkout &lt;branchmerginginto&gt;

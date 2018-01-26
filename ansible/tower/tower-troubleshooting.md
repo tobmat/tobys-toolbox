@@ -2,8 +2,6 @@
 
 **Jobs show up in UI with no status:**
 
-
-
 From linux utility instance as ec2\_user:
 
 `tower-cli job status [Job ID]`
@@ -26,7 +24,7 @@ From linux utility instance as ec2\_user:
 
 `supervisorctl status`
 
-\# if services are not all from the same time it could indicate an issue.  Restart services with following command on each node:
+\# if services are not all from the same time it could indicate an issue.  Restart services with following command on each node:
 
 `ansible-tower-service restart`
 

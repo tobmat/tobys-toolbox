@@ -2,13 +2,9 @@
 
 Review /var/log/maillog on smtp server
 
-
-
 If having relay issues verify relay is setup from IP you are coming from:
 
 `cat /etc/mail/access`
-
-
 
 **To add a relay:**
 
@@ -18,9 +14,9 @@ If having relay issues verify relay is setup from IP you are coming from:
 
 2. Restart sendmail service
 
-`servicesendmailstatus`
+`service sendmail status`
 
-`servicesendmailrestart`
+`service sendmail restart`
 
-`servicesendmailstatus`
+`service sendmail status`
 

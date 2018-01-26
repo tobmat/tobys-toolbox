@@ -2,6 +2,9 @@
 
 * [Introduction](README.md)
 * [Ansible](ansible.md)
+  * [Tower](ansible/tower.md)
+    * [Bastion Host](ansible/tower/bastion-host.md)
+  * [Windows Setup](ansible/windows-setup.md)
 * [AWS](aws.md)
   * [Recover EC2 Instance without key file](aws/recover-ec2-instance-without-key-file.md)
   * [Setup STS](aws/setup-sts.md)

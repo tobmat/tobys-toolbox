@@ -27,4 +27,7 @@
 * [Git](git.md)
   * [Feature Branch](git/reference.md)
   * [Development Process](git/development-process.md)
+* DUO
+  * DUO Access Gateway
+    * [Initial Setup](initial-setup.md)
 

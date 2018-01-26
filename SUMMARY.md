@@ -27,8 +27,10 @@
 * [Git](git.md)
   * [Feature Branch](git/reference.md)
   * [Development Process](git/development-process.md)
-* DUO
+* [DUO](duo.md)
   * [DUO Access Gateway](duo-access-gateway.md)
     * [Initial Setup](initial-setup.md)
     * [AWS Setup](aws-setup.md)
+  * [Add Windows Server](add-windows-server.md)
+* [SMTP Server](smtp-server.md)
 

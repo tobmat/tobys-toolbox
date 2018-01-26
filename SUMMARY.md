@@ -4,6 +4,7 @@
 * [Ansible](ansible.md)
   * [Tower](ansible/tower.md)
     * [Bastion Host](ansible/tower/bastion-host.md)
+    * [Upgrade](ansible/tower/upgrade.md)
   * [Windows Setup](ansible/windows-setup.md)
   * [Vault](ansible/password-management.md)
 * [AWS](aws.md)

@@ -28,6 +28,7 @@
   * [Feature Branch](git/reference.md)
   * [Development Process](git/development-process.md)
 * DUO
-  * DUO Access Gateway
+  * [DUO Access Gateway](duo-access-gateway.md)
     * [Initial Setup](initial-setup.md)
+    * [AWS Setup](aws-setup.md)
 

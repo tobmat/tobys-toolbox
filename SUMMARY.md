@@ -6,6 +6,7 @@
   * [Recover EC2 Instance without key file](aws/recover-ec2-instance-without-key-file.md)
   * [Setup STS](aws/setup-sts.md)
   * [CLI Cheat Sheet](aws/cli-cheat-sheet.md)
+  * [Storage Gateway](aws/storage-gateway.md)
 * [Chrony](chrony.md)
 * [VIM](vim.md)
 * [Cloudforms](cloudforms.md)

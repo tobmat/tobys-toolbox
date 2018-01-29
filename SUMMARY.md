@@ -35,4 +35,6 @@
     * [AWS Setup](aws-setup.md)
   * [Add Windows Server](add-windows-server.md)
 * [SMTP Server](smtp-server.md)
+* Linux Tools
+  * [Sed](sed.md)
 

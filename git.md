@@ -8,7 +8,9 @@
 
 `$ git pull`
 
+`# see git remote info`
 
+`$ git remote -v`
 
 
 

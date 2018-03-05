@@ -19,6 +19,7 @@
 * [Cloudforms](cloudforms.md)
 * [Git](git.md)
   * [Feature Branch](git/reference.md)
+  * [Forks](git/forks.md)
   * [Development Process](git/development-process.md)
 * [Docker](docker.md)
 * [DUO](duo.md)

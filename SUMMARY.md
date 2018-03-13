@@ -30,6 +30,8 @@
 * [Linux Networking](linux-networking.md)
 * [Node.js](nodejs.md)
 * [Openshift](openshift.md)
+  * [Minishift](openshift/minishift.md)
+  * [AWS Quickstart](openshift/aws-quickstart.md)
 * [DUO](duo.md)
   * [DUO Access Gateway](duo-access-gateway.md)
     * [Initial Setup](initial-setup.md)

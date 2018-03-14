@@ -15,6 +15,7 @@
   * [Setup STS](aws/setup-sts.md)
   * [CLI Cheat Sheet](aws/cli-cheat-sheet.md)
   * [Storage Gateway](aws/storage-gateway.md)
+  * [S3](aws/s3.md)
 * [Chrony](chrony.md)
 * [Cloudforms](cloudforms.md)
 * [Git](git.md)

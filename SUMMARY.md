@@ -41,4 +41,6 @@
 * [Linux Tools](linux-tools.md)
   * [Sed](sed.md)
   * [crontab](crontab.md)
+* [IDM \(RH Identity Management\)](idm-rh-identity-management.md)
+  * [Helpful Commands](idm-rh-identity-management/helpful-commands.md)
 

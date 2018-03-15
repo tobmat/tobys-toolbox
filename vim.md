@@ -1,5 +1,11 @@
 # VIM - All the things I've learned but can't remember about the best file editor in the world!
 
+#### Install on RHEL:
+
+```
+sudo yum install vim
+```
+
 ---
 
 #### Tricks

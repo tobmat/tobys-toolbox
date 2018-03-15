@@ -34,7 +34,7 @@
   * [Sed](sed.md)
   * [crontab](crontab.md)
   * [User setup](user-setup.md)
-  * VIM
+  * [VIM](vim.md)
 * [Node.js](nodejs.md)
 * [Openshift](openshift.md)
   * [Minishift](openshift/minishift.md)

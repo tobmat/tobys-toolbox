@@ -1,16 +1,14 @@
 # Common Git Commands:
 
-`# push changes to external repo`
+#### \# push changes to external repo
 
 `$ git push`
 
-`# pull changes from external repo`
+#### \# pull changes from external repo
 
 `$ git pull`
 
-`# see git remote info`
+#### \# see git remote info
 
 `$ git remote -v`
-
-
 

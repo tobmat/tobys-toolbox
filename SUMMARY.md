@@ -28,6 +28,7 @@
   * [Feature Branch](git/reference.md)
   * [Forks](git/forks.md)
   * [Development Process](git/development-process.md)
+  * [Setup](git/setup.md)
 * [IDM \(RH Identity Management\)](idm-rh-identity-management.md)
   * [Helpful Commands](idm-rh-identity-management/helpful-commands.md)
 * [Linux](linux.md)

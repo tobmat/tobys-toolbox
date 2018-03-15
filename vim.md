@@ -2,9 +2,13 @@
 
 #### Install on RHEL:
 
-```
-sudo yum install vim
-```
+`sudo yum install vim`
+
+Note: alias for vi to vim is created in /etc/profile.d/vim.sh
+
+
+
+ 
 
 ---
 

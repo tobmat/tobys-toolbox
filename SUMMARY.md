@@ -36,6 +36,7 @@
   * [crontab](crontab.md)
   * [User setup](user-setup.md)
   * [VIM](vim.md)
+  * [RHEL / Centos](rhel-centos.md)
 * [Node.js](nodejs.md)
 * [Openshift](openshift.md)
   * [Minishift](openshift/minishift.md)

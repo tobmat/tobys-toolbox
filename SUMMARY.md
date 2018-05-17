@@ -48,4 +48,5 @@
   * [Add Windows Server](add-windows-server.md)
 * [IDM \(RH Identity Management\)](idm-rh-identity-management.md)
   * [Helpful Commands](idm-rh-identity-management/helpful-commands.md)
+* [Mac Tips](mac-tips.md)
 

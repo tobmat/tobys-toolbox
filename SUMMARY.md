@@ -50,4 +50,5 @@
   * [Helpful Commands](idm-rh-identity-management/helpful-commands.md)
 * [Mac Tips](mac-tips.md)
   * [Brew](mac-tips/brew.md)
+* [Azure](azure.md)
 

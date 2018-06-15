@@ -23,8 +23,6 @@ When using a parameter file locally in ansible repo you have to remove the top l
 
 I was able to get your code working by changing the parameters json. Apparently, when it's inline, the top level objects aren't needed.
 
-
-
 **Storage:**
 
 Get connection string:  
@@ -36,5 +34,17 @@ Get list of items in a container:
 
 Upload file to container:
 
-`az storage blob upload -f createRG.yml -c tobytest --connection-string `
+`az storage blob upload -f createRG.yml -c tobytest --connection-string`
+
+
+
+**Powershell / Azure modules on Mac:**
+
+brew tap caskroom/cask
+
+brew cask install powershell
+
+pwsh
+
+Install-Module -Name AzureRM.Netcore
 

@@ -36,8 +36,6 @@ Upload file to container:
 
 `az storage blob upload -f createRG.yml -c tobytest --connection-string`
 
-
-
 **Powershell / Azure modules on Mac:**
 
 brew tap caskroom/cask
@@ -47,4 +45,8 @@ brew cask install powershell
 pwsh
 
 Install-Module -Name AzureRM.Netcore
+
+**Post to webhook for azure automation:**
+
+curl -d "" -X POST https://s1events.azure-automation.net/webhooks?token=v56W%2fxYfwnbXmFQJA8xrQ0N%2fP%2fakiORMwHEwONoWG4g%3d
 

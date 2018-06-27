@@ -1,3 +1,7 @@
+**Point to different subscription**
+
+`az account set --subscription <subscription name>`
+
 **List accounts**
 
 ```

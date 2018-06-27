@@ -1,3 +1,9 @@
+**List accounts**
+
+```
+az account list --output table
+```
+
 **List available VM images:**
 
 ```
@@ -49,8 +55,6 @@ Install-Module -Name AzureRM.Netcore
 **Post to webhook for azure automation:**
 
 curl -d "" -X POST [https://s1events.azure-automation.net/webhooks?token=v56W%2fxYfwnbXmFQJA8xrQ0N%2fP%2fakiORMwHEwONoWG4g%3d](https://s1events.azure-automation.net/webhooks?token=v56W%2fxYfwnbXmFQJA8xrQ0N%2fP%2fakiORMwHEwONoWG4g%3d)
-
-
 
 **Service Endpoints:**
 

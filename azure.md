@@ -36,7 +36,11 @@ I was able to get your code working by changing the parameters json. Apparently,
 **Storage:**
 
 Get connection string:  
-`az storage account show-connection-string --name tobystorage1973 --resource-group tobyS3`
+`az storage account show-connection-string --name <storage_account> -g <resource_group>`
+
+OR
+
+`connection=$(az storage account show-connection-string -n <storageaccount> -g <resource_group> --output tsv)`
 
 Get list of items in a container:
 
@@ -44,7 +48,11 @@ Get list of items in a container:
 
 Upload file to container:
 
-`az storage blob upload -f createRG.yml -c tobytest --connection-string`
+`az storage blob upload -f createRG.yml -c <container name> --connection-string`
+
+OR
+
+`az storage blob upload --account-name <storage account name> --c <container name> --type page --file rhel-server-7.5-x86_64-kvm.vhd --name rhel-server-7.5-x86_64-kvm.vhd`
 
 **Powershell / Azure modules on Mac:**
 

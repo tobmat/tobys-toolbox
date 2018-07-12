@@ -21,3 +21,13 @@ Test from server --
 
 [http://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html](http://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html)
 
+#### Tower Server
+
+/var/lib/awx/projects - where playbooks are stored
+
+/etc/tower/conf.d - some configuration settings files
+
+ansible-tower-service  - tower service
+
+/etc/openldap/certs/ - location for your wildcard certs
+

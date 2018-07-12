@@ -12,8 +12,6 @@ From linux utility instance as ec2\_user:
 
 `tower-cli job cancel [Job ID]`
 
-
-
 **Review status of the cluster:**
 
 `curl https://tower.genesyscloud.io/api/v2/ping/ | python -mjson.tool`
@@ -30,9 +28,9 @@ From linux utility instance as ec2\_user:
 
 `awx-managelist_instances`
 
-
-
 **Remove old instance from rabbitmq:**
 
 `rabbitmqctl forget_cluster_node 'rabbitmq@11.254.2.230'`
+
+rabbitmqctl cluster\_status
 

@@ -20,6 +20,12 @@ az vm image list --output table
 az vm list-skus --output table
 ```
 
+**Get public IP:**
+
+```
+az network public-ip show -n tower01-ip -g test-pcc-ch-ansible --query ipAddress -o tsv
+```
+
 OMS - Operations Management Suite
 
 **Notes:**

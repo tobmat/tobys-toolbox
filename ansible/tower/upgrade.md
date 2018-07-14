@@ -1,20 +1,14 @@
 # Backup Tower DB:
 
-
-
 **From Linux Utility instance:**
 
-`cd ansible-tower-setup-<tower_version>   # example -ansible-tower-setup-3.2.1`
+`cd ansible-tower-setup-<tower_version>   # example -ansible-tower-setup-3.2.1`
 
-
-
-**Run setup command with backup \(-b\) flag:  **
+**Run setup command with backup \(-b\) flag:  **
 
 ```
 ./setup.sh -b # Will only run on one of the tower instances and will copy the backup to the local directory.
 ```
-
-
 
 **Upgrade Tower instance:**
 
@@ -23,9 +17,7 @@ Copy URL for latest version from here:
 
 `cd /home/ec2-user`
 
-`wget `[`http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz`](http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz)
-
-
+`wget`[`http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz`](http://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz)
 
 **Extract tar file:**
 
@@ -33,19 +25,13 @@ Copy URL for latest version from here:
 
 `cd ansible-tower-setup-<tower_version>`
 
-
-
 **Copy inventory file to new directory:**
 
 `cp../ansible-tower-setup-<current_tower_version>/inventory .`
 
-
-
 **Run setup.sh script:**
 
 `./setup.sh`
-
-
 
 **Validate Tower Upgrade:**
 

@@ -16,6 +16,8 @@
   * [CLI Cheat Sheet](aws/cli-cheat-sheet.md)
   * [Storage Gateway](aws/storage-gateway.md)
   * [S3](aws/s3.md)
+* [Azure](azure.md)
+  * [azcli](azure/azcli.md)
 * [Chrony](chrony.md)
 * [Cloudforms](cloudforms.md)
 * [Docker](docker.md)
@@ -48,7 +50,5 @@
   * [Add Windows Server](add-windows-server.md)
 * [IDM \(RH Identity Management\)](idm-rh-identity-management.md)
   * [Helpful Commands](idm-rh-identity-management/helpful-commands.md)
-* [Mac Tips](mac-tips.md)
-  * [Brew](mac-tips/brew.md)
 * [Azure](azure.md)
 

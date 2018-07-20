@@ -12,3 +12,9 @@
 
 `$ git remote -v`
 
+#### \# git commit info
+
+`$ git log`
+
+
+

@@ -8,7 +8,7 @@ Here is a breakdown from a command line perspective:
 
 \#Create a new branch
 
-`$ git checkout -b myfeaturedevelop  # source branch is optional if source is current branch`
+`$ git checkout -b myfeature develop  # source branch is optional if source is current branch`
 
 `# Push branch first time`
 
@@ -26,11 +26,9 @@ Here is a breakdown from a command line perspective:
 
 `$ git checkout <branchname>`
 
-
-
-\# merge feature branch, --no-ffflag causes the merge to always create a new commit object
+\# merge feature branch, --no-ff flag causes the merge to always create a new commit object
 
 $ git checkout &lt;branchmerginginto&gt;
 
-$ git merge --no-ffmyfeature
+$ git merge --no-ff myfeature
 

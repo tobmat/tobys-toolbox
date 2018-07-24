@@ -31,3 +31,5 @@ ansible-tower-service  - tower service
 
 /etc/openldap/certs/ - location for your wildcard certs
 
+/var/lib/pgsql - location of database if local
+

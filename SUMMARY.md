@@ -18,6 +18,7 @@
   * [S3](aws/s3.md)
 * [Azure](azure.md)
   * [azcli](azure/azcli.md)
+  * [ansible modules](azure/ansible-modules.md)
 * [Chrony](chrony.md)
 * [Cloudforms](cloudforms.md)
 * [Docker](docker.md)

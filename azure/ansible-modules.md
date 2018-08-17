@@ -10,8 +10,6 @@ Install ansible engine
 
 `sudo pip install ansible[azure]`
 
-
-
 **Export service principle variables:**
 
 `export AZURE_SUBSCRIPTION_ID=<subscription id>`
@@ -23,4 +21,8 @@ Install ansible engine
 `export AZURE_TENANT=<tenant>`
 
 
+
+**dynamic inventory:**
+
+export AZURE\_TAGS=pcc-ch-tower-test - I set tag to resource group
 

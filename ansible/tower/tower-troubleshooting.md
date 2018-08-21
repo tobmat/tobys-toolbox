@@ -14,7 +14,7 @@ From linux utility instance as ec2\_user:
 
 **Review status of the cluster:**
 
-`curl https://tower.genesyscloud.io/api/v2/ping/ | python -mjson.tool`
+`curl https://tower.genesyscloud.io/api/v2/ping/ | python -m json.tool`
 
 \# Note – Timestamp of each node should be within a few minutes of each other
 
@@ -26,7 +26,7 @@ From linux utility instance as ec2\_user:
 
 `ansible-tower-service restart`
 
-`awx-managelist_instances`
+`awx-manage list_instances`
 
 **Remove old instance from rabbitmq:**
 

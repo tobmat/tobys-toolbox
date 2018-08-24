@@ -2,7 +2,7 @@
 
 Install ansible engine
 
-`sudo yum check-update; sudo yum install -y gcc libffi-devel python-devel openssl-devel epel-release`
+`sudo yum check-update; sudo yum install -y gcc libffi-devel python-devel openssl-devel`
 
 `sudo yum install http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -y`
 
@@ -20,9 +20,11 @@ Install ansible engine
 
 `export AZURE_TENANT=<tenant>`
 
-
-
 **dynamic inventory:**
 
-export AZURE\_TAGS=pcc-ch-tower-test - I set tag to resource group
+export AZURE\_TAGS=pcc-eus-ch-tower - I set tag to resource group
+
+
+
+ansible -i azure\_rm.py pcc-eus-ch-tower -m ping --private-key ~/.ssh/tower2 -u ansible
 

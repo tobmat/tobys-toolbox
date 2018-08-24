@@ -24,7 +24,7 @@ From linux utility instance as ec2\_user:
 
 \# if services are not all from the same time it could indicate an issue.  Restart services with following command on each node:
 
-`ansible-tower-service restart`
+ansible-tower-service` restart`
 
 `awx-manage list_instances`
 

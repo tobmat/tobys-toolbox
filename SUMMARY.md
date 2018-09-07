@@ -19,7 +19,6 @@
   * [Storage Gateway](aws/storage-gateway.md)
   * [S3](aws/s3.md)
 * [Azure](azure.md)
-  * [azcli](azure/azcli.md)
   * [ansible modules](azure/ansible-modules.md)
   * [powershell](azure/powershell.md)
 * [Chrony](chrony.md)

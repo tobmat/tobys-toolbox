@@ -26,6 +26,15 @@ az vm list-skus --output table
 az network public-ip show -n tower01-ip -g test-pcc-ch-ansible --query ipAddress -o tsv
 ```
 
+
+
+##### Update template on resource group:
+
+```
+
+az group update -n '{{ resourceGroupName }}' --set tags.environment='{{ environmentTag }}'
+```
+
 OMS - Operations Management Suite
 
 **Notes:**
@@ -59,8 +68,6 @@ Upload file to container:
 OR
 
 `az storage blob upload --account-name <storage account name> --c <container name> --type page --file rhel-server-7.5-x86_64-kvm.vhd --name rhel-server-7.5-x86_64-kvm.vhd`
-
-
 
 **Post to webhook for azure automation:**
 

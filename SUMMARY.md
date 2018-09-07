@@ -21,6 +21,7 @@
 * [Azure](azure.md)
   * [azcli](azure/azcli.md)
   * [ansible modules](azure/ansible-modules.md)
+  * [powershell](azure/powershell.md)
 * [Chrony](chrony.md)
 * [Cloudforms](cloudforms.md)
 * [Docker](docker.md)
@@ -54,4 +55,5 @@
 * [IDM \(RH Identity Management\)](idm-rh-identity-management.md)
   * [Helpful Commands](idm-rh-identity-management/helpful-commands.md)
 * [Azure](azure.md)
+* [Mac](mac.md)
 

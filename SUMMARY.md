@@ -8,6 +8,7 @@
     * [Modifications](ansible/tower/modifications.md)
     * [tower-manage](ansible/tower/tower-manage.md)
     * [Tower Troubleshooting](ansible/tower/tower-troubleshooting.md)
+    * [api](ansible/tower/api.md)
   * [Windows Setup](ansible/windows-setup.md)
   * [Vault](ansible/password-management.md)
 * [AWS](aws.md)

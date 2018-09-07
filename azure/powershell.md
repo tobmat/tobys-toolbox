@@ -1,12 +1,17 @@
 #### Setup
 
+**Powershell / Azure modules on Mac:**
+
 ```
- $ pwsh # connect to powershell core
+$ brew tap caskroom/cask
+$ brew cask install powershell
+$ pwsh # connect to powershell core
+$ Install-Module -Name AzureRM.Netcore
+```
+
+```
  $ Login-AzureRmAccount
- 
 ```
-
-
 
 #### Get current subscription info:
 

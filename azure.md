@@ -60,15 +60,7 @@ OR
 
 `az storage blob upload --account-name <storage account name> --c <container name> --type page --file rhel-server-7.5-x86_64-kvm.vhd --name rhel-server-7.5-x86_64-kvm.vhd`
 
-**Powershell / Azure modules on Mac:**
 
-brew tap caskroom/cask
-
-brew cask install powershell
-
-pwsh
-
-Install-Module -Name AzureRM.Netcore
 
 **Post to webhook for azure automation:**
 

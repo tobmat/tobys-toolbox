@@ -6,10 +6,6 @@
 
 Note: alias for vi to vim is created in /etc/profile.d/vim.sh
 
-
-
- 
-
 ---
 
 #### Tricks

@@ -6,3 +6,5 @@ pwsh
 
 
 
+Copy selection to clipboard = control+cmd+shift+4
+

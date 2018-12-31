@@ -21,6 +21,7 @@
 * [Azure](azure.md)
   * [ansible modules](azure/ansible-modules.md)
   * [powershell](azure/powershell.md)
+  * [Copy Custom Image to New Region](azure/copy-custom-image-to-new-region.md)
 * [Chrony](chrony.md)
 * [Cloudforms](cloudforms.md)
 * [Docker](docker.md)

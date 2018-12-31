@@ -20,18 +20,23 @@ az vm image list --output table
 az vm list-skus --output table
 ```
 
+**Get VM size of running VMs**
+
+```
+az vm list -d  --query "[?powerState=='VM running']" --query "[].[name,powerState,hardwareProfile.vmSize]" -o tsv
+```
+
+
+
 **Get public IP:**
 
 ```
 az network public-ip show -n tower01-ip -g test-pcc-ch-ansible --query ipAddress -o tsv
 ```
 
-
-
 ##### Update template on resource group:
 
 ```
-
 az group update -n '{{ resourceGroupName }}' --set tags.environment='{{ environmentTag }}'
 ```
 

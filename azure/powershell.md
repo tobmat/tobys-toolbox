@@ -31,5 +31,11 @@ Get-AzureRmSubscription
 Set-AzureRmContext -SubscriptionId <id>
 ```
 
+#### Review Deployment Errors with Tracking ID:
+
+```
+Get-AzureRmLog -CorrelationId ed06c5cb-0e0d-4aaa-b85c-1fd4d1db4841 -DetailedOutput
+```
+
 
 

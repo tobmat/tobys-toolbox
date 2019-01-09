@@ -26,11 +26,20 @@ sort a file:
 :%!sort
 ```
 
+actions between "{" or "\[" or "\(":
+
+```
+y%   # copy lines including the brackets
+d%   # delete lines including the brackets
+```
+
 show end of line:
 
 ```
 :set list
 ```
+
+ 
 
 ---
 

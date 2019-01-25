@@ -1,28 +1,44 @@
+---
+description: >-
+  Python-based software that automates software provisioning, configuration
+  management, and application deployment.
+---
+
 # Ansible
 
-## Ansible
+#### ad-hoc commands
 
-python-based software that automates software provisioning, configuration management, and application deployment.
+```text
+ansible <host reference> -i <inventory> -m <module> -a <module attributes>
+# EXAMPLES
+$ ansible everyone -m command -a 'id'
 
-### test inventory connections
+$ ansible everyone -m copy \
+> -a 'content="This server is managed by Ansible.\n" dest=/etc/motd' --become
+
+$ ansible everyone -m command -a 'cat /etc/motd'
+
+```
+
+#### test inventory connections
 
 `ansible user_setup -m setup -i inventory -o | cut -d "" -f 1-3`
 
-### test inventory
+#### test inventory
 
-```text
+```bash
 ansible all -i <inventory name> --list-hosts
 ```
 
-## determine if ansible module is available:
+#### determine if ansible module is available:
 
 `ansible localhost -m <module_name>`
 
-## debugging playbook runs:
+#### debugging playbook runs:
 
 `ANSIBLE_DEBUG=1 ansible-playbook <playbook>.yml`
 
-### complex with\_items:
+#### complex with\_items:
 
 ```text
   with_items:

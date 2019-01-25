@@ -1,3 +1,5 @@
+# Feature Branch
+
 Feature Branch Info:
 
 [https://www.atlassian.com/git/tutorials/comparing-workflows\#feature-branch-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow)
@@ -8,7 +10,7 @@ Here is a breakdown from a command line perspective:
 
 \#Create a new branch
 
-`$ git checkout -b myfeature develop  # source branch is optional if source is current branch`
+`$ git checkout -b myfeature develop # source branch is optional if source is current branch`
 
 `# Push branch first time`
 

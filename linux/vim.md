@@ -1,18 +1,16 @@
-# VIM - All the things I've learned but can't remember about the best file editor in the world!
+# VIM
 
-#### Install on RHEL:
+## Install on RHEL:
 
 `sudo yum install vim`
 
 Note: alias for vi to vim is created in /etc/profile.d/vim.sh
 
----
-
-#### Tricks
+## Tricks
 
 Get rid of ^M \(Usually found if copying a file from windows\):
 
-```
+```text
 :ed ++ff=dos %
 
 OR
@@ -22,34 +20,30 @@ OR
 
 sort a file:
 
-```
+```text
 :%!sort
 ```
 
 actions between "{" or "\[" or "\(":
 
-```
+```text
 y%   # copy lines including the brackets
 d%   # delete lines including the brackets
 ```
 
 show end of line:
 
-```
+```text
 :set list
 ```
 
- 
+## Plugin Manager Setup - This is for vimplug
 
----
-
-#### Plugin Manager Setup - This is for vimplug
-
-Find instructions here:  [https://github.com/junegunn/vim-plug](https://github.com/junegunn/vim-plug) OR
+Find instructions here: [https://github.com/junegunn/vim-plug](https://github.com/junegunn/vim-plug) OR
 
 Setup ~/.vimrc file to autoinstall vim-plug, and autoload plugin files:
 
-```
+```text
 " Silent vim-plug setup and initial PlugInstall
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -70,17 +64,15 @@ Plug 'scrooloose/syntastic'
 call plug#end()
 ```
 
-###### Note - I currently setup vim via ansible
+### Note - I currently setup vim via ansible
 
----
+## Plugins I use
 
-#### Plugins I use
+### Nerdtree - vim file manager, can open multiple files at ones
 
-###### Nerdtree - vim file manager, can open multiple files at ones
+Setup - I have the following pieces in my ~/.vimrc file:
 
-Setup  - I have the following pieces in my ~/.vimrc file:
-
-```
+```text
 "Show hidden files in NerdTree
 "let NERDTreeShowHidden=1
 
@@ -94,7 +86,7 @@ map <F2> :NERDTreeToggle<CR>
 
 Cheatsheet
 
-```
+```text
 Lets open some windows
 s open new vertical split window
 i open new horizontal spilt window
@@ -140,11 +132,11 @@ X: close all children recurs­ively
 e: explore selected dir
 ```
 
-###### Syntastic - checks syntax for many common scripting languages
+### Syntastic - checks syntax for many common scripting languages
 
 ~/.vimrc setup
 
-```
+```text
 " Syntastic Settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -156,13 +148,11 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 ```
 
----
+## ~/.vimrc
 
-#### ~/.vimrc
+vimrc file setup to customize vim. Here are the current ones I'm using:
 
-vimrc file setup to customize vim.  Here are the current ones I'm using:
-
-```
+```text
 " turn off smart indentation when pasting - this will turn off auto comment and indent when pasting
 set pastetoggle=<F2>
 
@@ -172,6 +162,4 @@ set paste
 " shortcut to turn off line numbers
 map <silent> con :set number!<CR>
 ```
-
-
 

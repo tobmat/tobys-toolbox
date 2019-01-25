@@ -1,3 +1,5 @@
+# Docker
+
 **root account**
 
 cd /etc/yum.repos.d/
@@ -8,13 +10,13 @@ vi docker.repo
 
 name= Docker Repo
 
-baseurl=https://yum.dockerproject.org/repo/main/centos/7/
+baseurl=[https://yum.dockerproject.org/repo/main/centos/7/](https://yum.dockerproject.org/repo/main/centos/7/)
 
 enabled=1
 
 gpgcheck=1
 
-gpgkey=https://yum.dockerproject.org/gpg
+gpgkey=[https://yum.dockerproject.org/gpg](https://yum.dockerproject.org/gpg)
 
 yum update -y
 
@@ -34,13 +36,7 @@ cat /etc/group \| grep docker
 
 yum install elinks -y
 
-  
-
-
 **user account**
-
-  
-
 
 docker images
 
@@ -76,7 +72,7 @@ docker run -d nginx:latest
 
 docker inspect elated\_austin
 
-elinks http://172.17.0.2
+elinks [http://172.17.0.2](http://172.17.0.2)
 
 docker stop elated\_austin
 
@@ -102,13 +98,13 @@ docker rm $\(docker ps -a -q\)
 
 docker run -d --name=WebServer1 -P nginx
 
-elinks http://tobmat1.mylabserver.com:32769
+elinks [http://tobmat1.mylabserver.com:32769](http://tobmat1.mylabserver.com:32769)
 
 docker port WebServer1 $CONTAINERREPORT
 
 docker run -d -p 8080:80 --name=WebServer2 nginx
 
-elinks http://tobmat1.mylabserver.com:8080
+elinks [http://tobmat1.mylabserver.com:8080](http://tobmat1.mylabserver.com:8080)
 
 mkdir www
 

@@ -1,33 +1,21 @@
+# Initial Setup
+
 Reference Links
-
-
 
 [https://duo.com/docs/dag-linux](https://duo.com/docs/dag-linux)
 
-
-
 Install steps:
 
-
-
- created an AD service account for DAG to use, set password to never expire \(atgservice\)
-
-
+created an AD service account for DAG to use, set password to never expire \(atgservice\)
 
 Linux DUO Access Gateway
-
-
 
 Followed this documentation with some adjustments to use docker ce with rhel:
 
 [https://duo.com/docs/dag-linux\#prerequisites](https://duo.com/docs/dag-linux#prerequisites)
 
-  
-
-
 1. Createdsshkey calledatg-dagto build instance with
-
-2. Created a security group to address access needs listed in doc.  Made admin port only accessible via VPC IP range \(windows jump\)
+2. Created a security group to address access needs listed in doc. Made admin port only accessible via VPC IP range \(windows jump\)
 
 | HTTP | TCP | 80 | 0.0.0.0/0 |  |
 | :--- | :--- | :--- | :--- | :--- |
@@ -38,35 +26,20 @@ Followed this documentation with some adjustments to use docker ce with rhel:
 | HTTPS | TCP | 443 | 0.0.0.0/0 |  |
 | All ICMP - IPv4 | All | N/A | 0.0.0.0/0 |  |
 
-
-
-
-
 1. Create IAM role for DAG with full access policy for S3 \(This is to allow anydaginstance to upload configuration used to build futuredaginstances\)
-
-2. Built server \(RHEL7.4\) in EC2 cloud hub VPC on private subnet using requirements listed in doc.  \(Question - What should we use for memory and disk?  Doc says 4GB or more and 20GB or more\)
-
+2. Built server \(RHEL7.4\) in EC2 cloud hub VPC on private subnet using requirements listed in doc. \(Question - What should we use for memory and disk? Doc says 4GB or more and 20GB or more\)
 3. Create application ELB security group:
-
-
 
 | HTTPS | TCP | 443 | 0.0.0.0/0 |  |
 | :--- | :--- | :--- | :--- | :--- |
 | All ICMP - IPv4 | All | N/A | 0.0.0.0/0 |  |
 
-
-
 1. Create application ELB:
 
 Internet-facing, in both AZ's on public network, security group created above, deletion protection enabled, target group HTTPS, stickiness enabled for 8 hours to match DAGs, add ELB instances.
 
-
-
-1. Added DNS entry in route53:  CNAME record[access.genesyscloud.io](https://access.genesyscloud.io/)pointing to duo-dagELB.
-
+1. Added DNS entry in route53: CNAME record[access.genesyscloud.io](https://access.genesyscloud.io/)pointing to duo-dagELB.
 2. Followed Centos7 instructions to install docker \(Note -Redhatinstructions required paid EE version of docker\)
-
-
 
 `sudoyum installwgetyum-utils-y`
 
@@ -96,69 +69,41 @@ Internet-facing, in both AZ's on public network, security group created above, d
 
 `wget--content-disposition`[`https://dl.duosecurity.com/access-gateway-latest.yml`](https://dl.duosecurity.com/access-gateway-latest.yml)
 
-`  docker-compose -p access-gateway -f access-gateway* up -d`
-
-
+`docker-compose -p access-gateway -f access-gateway* up -d`
 
 From DAG Admin Console - accessed from 8443 from AWS windows jump
 
-
-
 Authentication Source:
-
-
 
 1. Get IP addresses of AWS domain controllers and use this format on Authentication Source tab
 
 ldap://11.254.1.234,ldap://11.254.2.94
 
-
-
 1. Transport type : clear
-
-2. Attributes / search attributes: distinguishedName,mail,sAMAccountName,userPrincipalName
-
+2. Attributes / search attributes: distinguishedName,mail,sAMAccountName,userPrincipalName
 3. Search base: OU=users,OU=pureconnect,DC=pureconnect,DC=cloud
-
 4. Provide AD service account username and pw
-
-
 
 Launcher
 
-1. Create a Duo Access Gateway application in the Duo Admin Panel  \(This is done by Infosec \(Kitch\)\)
-
+1. Create a Duo Access Gateway application in the Duo Admin Panel \(This is done by Infosec \(Kitch\)\)
 2. Load DAG keys,apiinfo
-
-
-
-
 
 Applications
 
 1. Create a SAML application in the Duo Admin Panel. \(This is done by Infosec\)
-
 2. Upload configuration file provided by Infosec
-
 3. Download XML metadata for AWS setup
-
 4. Follow these instructions for AWS setup:[https://duo.com/docs/aws](https://duo.com/docs/aws)
-
-
 
 Settings
 
 1. Change Admin Password
-
 2. Internet – upload wildcard cert info
-
-
-
-
 
 From DAG instance
 
-  \# installawscli
+\# installawscli
 
 `sudo yum install`[`http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm`](http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm)`-y`
 
@@ -166,9 +111,7 @@ From DAG instance
 
 `sudo pip install awscli`
 
-
-
- \# download duo.sh script to pull config from dag container and upload to s3
+\# download duo.sh script to pull config from dag container and upload to s3
 
 `sudo aws s3 cp s3://gpc-cf-templates/scripts/duo.sh /root/duo.sh`
 

@@ -1,3 +1,5 @@
+# ansible modules
+
 **To setup ansible to run with azure on RHEL:**
 
 Install ansible engine
@@ -23,8 +25,6 @@ Install ansible engine
 **dynamic inventory:**
 
 export AZURE\_TAGS=pcc-eus-ch-tower - I set tag to resource group
-
-
 
 ansible -i azure\_rm.py pcc-eus-ch-tower -m ping --private-key ~/.ssh/tower2 -u ansible
 

@@ -1,42 +1,42 @@
+# Azure
+
 **Point to different subscription**
 
 `az account set --subscription <subscription name>`
 
 **List accounts**
 
-```
+```text
 az account list --output table
 ```
 
 **List available VM images:**
 
-```
+```text
 az vm image list --output table
 ```
 
 **List VM sku's:**
 
-```
+```text
 az vm list-skus --output table
 ```
 
 **Get VM size of running VMs**
 
-```
+```text
 az vm list -d  --query "[?powerState=='VM running']" --query "[].[name,powerState,hardwareProfile.vmSize]" -o tsv
 ```
 
-
-
 **Get public IP:**
 
-```
+```text
 az network public-ip show -n tower01-ip -g test-pcc-ch-ansible --query ipAddress -o tsv
 ```
 
-##### Update template on resource group:
+## Update template on resource group:
 
-```
+```text
 az group update -n '{{ resourceGroupName }}' --set tags.environment='{{ environmentTag }}'
 ```
 
@@ -80,7 +80,7 @@ curl -d "" -X POST [https://s1events.azure-automation.net/webhooks?token=v56W%2f
 
 **Service Endpoints:**
 
-Storage - Enable access to storage blob from all VMs in a virtual network.  Also reduces hops and should increase speed of downloads.  To validate:   `traceroute tobystorage1973.blob.core.windows.net -T`
+Storage - Enable access to storage blob from all VMs in a virtual network. Also reduces hops and should increase speed of downloads. To validate: `traceroute tobystorage1973.blob.core.windows.net -T`
 
 From network:
 
@@ -93,6 +93,4 @@ From storage account: under 'Firewalls and virtual networks'
 1. change 'Allow access from' to Selected networks
 2. click '+ Add existing virtual network', select network/subnet that you added storage endpoint to.
 3. save
-
-
 

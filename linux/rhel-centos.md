@@ -1,8 +1,6 @@
-##### List all services
+# RHEL / Centos
 
-```
+```text
 systemctl list-unit-files
 ```
-
-
 

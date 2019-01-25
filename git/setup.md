@@ -1,4 +1,4 @@
-### Git Setup
+# Setup
 
 **Edit Git Config**
 
@@ -6,7 +6,7 @@
 
 **my default config**
 
-```
+```text
 [user]
         email = toby.matherly@genesys.com
         name = Toby Matherly
@@ -22,6 +22,4 @@
  [push]
         default = simple
 ```
-
-
 

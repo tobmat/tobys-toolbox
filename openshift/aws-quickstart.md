@@ -1,12 +1,12 @@
-# AWS Openshift
+# AWS Quickstart
 
 [https://aws.amazon.com/about-aws/whats-new/2016/06/red-hat-openshift-on-the-aws-cloud-quick-start-reference-deployment/](https://aws.amazon.com/about-aws/whats-new/2016/06/red-hat-openshift-on-the-aws-cloud-quick-start-reference-deployment/)
 
-##### Add CNAME entry for elb:
+## Add CNAME entry for elb:
 
 for example: openshiftdev.oncaas.com
 
-##### Add wildcard cert:
+## Add wildcard cert:
 
 1. log into each master instance
 2. copy wildcard.crt and wildcard.key to /etc/origin/master
@@ -14,7 +14,7 @@ for example: openshiftdev.oncaas.com
 4. replace elb name for CNAME entry above.  Search public to find all entries
 5. Add code to end of following sections: assetConfig, servingInfo
 
-```
+```text
     namedCertificates:
       - certFile: wildcard.example.com.crt
         keyFile: wildcard.example.com.key
@@ -24,15 +24,15 @@ for example: openshiftdev.oncaas.com
 
 1. Restart atomic-openshift-master-api service
 
-```
+```text
 systemctl restart atomic-openshift-master-api
 ```
 
-##### Add new users \(must run on all master instances\):
+## Add new users \(must run on all master instances\):
 
 created a script to add new users from file:
 
-```
+```text
 ##contents of new_users.sh
 
 # add new users
@@ -58,9 +58,9 @@ while read line; do
 done < $1
 ```
 
-##### Helpful commands:
+## Helpful commands:
 
-```
+```text
 # validate user pw
 htpasswd -v  /etc/origin/master/htpasswd admin
 
@@ -78,14 +78,12 @@ oc get users
 htpasswd -b  /etc/origin/master/htpasswd admin
 ```
 
-##### Login with command line tool:
+## Login with command line tool:
 
-```
+```text
 oc login https://<openshift_url>:8443 -u username
 
 # logout
 oc logout
 ```
-
-
 

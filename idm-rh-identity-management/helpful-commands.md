@@ -1,16 +1,18 @@
-###### Validate idM Services
+# Helpful Commands
 
-`ipactl status  # run as root`
+## Validate idM Services
 
-###### Get Kerberos Ticket
+`ipactl status # run as root`
+
+## Get Kerberos Ticket
 
 `kinit admin`
 
-###### Validate Kerberos KDC
+## Validate Kerberos KDC
 
 `klist`
 
-View Replication via CLI  \# Need to know Directory Manager password
+View Replication via CLI \# Need to know Directory Manager password
 
 **Domain**
 
@@ -20,21 +22,15 @@ View Replication via CLI  \# Need to know Directory Manager password
 
 `ipa-csreplica-manage list`
 
-
-
-###### Full list of ipa commands
+## Full list of ipa commands
 
 `ipa help commands`
 
-
-
-###### List all HBAC rules
+## List all HBAC rules
 
 `ipa hbacrule-find –all`
 
-
-
-###### Show specific rule
+## Show specific rule
 
 `ipa hbacrule-show <rulename> --all`
 
@@ -42,75 +38,51 @@ OR
 
 `ipa hbacrule-find --name=<rulename>--all`
 
-
-
-###### List all user logins
+## List all user logins
 
 ipauser-find \| grep "login"
 
-
-
-###### Full info about a user
+## Full info about a user
 
 `ipa user-find --login=<login> --all`
 
+## List all groups
 
+`ipa group-find`
 
-###### List all groups
-
-`ipa group-find `
-
-
-
-###### Full info about a group
+## Full info about a group
 
 `ipa group-find --group-name=<group_name> –all`
 
-
-
-###### List allhostgroups
+## List allhostgroups
 
 `ipa hostgroup-find`
 
-
-
-###### Full info about a hostgroup
+## Full info about a hostgroup
 
 `ipa hostgroup-find --hostgroup-name=<hostgroupname> --all`
 
-
-
-###### List DNS Zones
+## List DNS Zones
 
 `ipa dnszone-find`
 
+## List DNS records in a Zone
 
+`ipa dnsrecord-find <DNS Zone>`
 
-###### List DNS records in a Zone
-
-`ipa dnsrecord-find <DNS Zone>`
-
-
-
-###### Backup IDM
+## Backup IDM
 
 `ipa-backup`
 
-
-
-###### Set instance to create home directories for IDM users
+## Set instance to create home directories for IDM users
 
 `authconfig --enablemkhomedir --update`
 
-
-
-###### List sudo rules
+## List sudo rules
 
 `ipa sudorule-find`
 
-
-
-###### Show sudo Rule
+## Show sudo Rule
 
 `ipa sudorule-show <rule_name>`
 

@@ -1,4 +1,4 @@
-#### Modify prompt:
+# User setup
 
 Update $HOME/.bashrc with following lines
 

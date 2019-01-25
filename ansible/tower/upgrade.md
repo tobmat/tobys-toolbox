@@ -1,12 +1,12 @@
-# Backup Tower DB:
+# Upgrade
 
 **From Linux Utility instance:**
 
-`cd ansible-tower-setup-<tower_version>   # example -ansible-tower-setup-3.2.1`
+`cd ansible-tower-setup-<tower_version> # example -ansible-tower-setup-3.2.1`
 
-**Run setup command with backup \(-b\) flag:  **
+**Run setup command with backup \(-b\) flag:** 
 
-```
+```text
 ./setup.sh -b # Will only run on one of the tower instances and will copy the backup to the local directory.
 ```
 
@@ -39,6 +39,4 @@ Copy URL for latest version from here:
 2. Go to settings
 3. Select 'About Tower'
 4. Confirm new Tower Version is reflected
-
-
 

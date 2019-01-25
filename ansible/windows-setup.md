@@ -1,25 +1,22 @@
-### Setup for windows
+# Windows Setup
 
-#### windows machines
+## windows machines
 
 1. Set-ExecutionPolicy Bypass \(or setup to use certificates\)
-
 2. Enable-PSRemoting -Force
-
 3. winrm set winrm/config/service @{AllowUnencrypted="true"}
-
 4. AWS - add security group rule to allow traffic on 5985
 
-#### ansible server
+## ansible server
 
 1. yum -y install gcc python-devel krb5-devel krb5-workstation
 2. pip install [https://github.com/diyan/pywinrm/archive/master.zip\#egg=pywinrm](https://github.com/diyan/pywinrm/archive/master.zip#egg=pywinrm)
 3. pip install python-kerberos
 4. pip install requests-kerberos
 
-##### create windows inventory file containing the following:
+### create windows inventory file containing the following:
 
-```
+```text
 [windows]
 win-jump-east02.cloudhub.local
 
@@ -29,11 +26,11 @@ win-jump-east02.cloudhub.local
  ansible_ssh_port=5985
 ```
 
-##### Change /etc/resolv.conf to use same DNS server as windows server you are trying to access \(for AWS\)
+### Change /etc/resolv.conf to use same DNS server as windows server you are trying to access \(for AWS\)
 
-##### Update /etc/krb5.conf and change the following sections: \(kdc is pointing to domain controller of windows instance
+### Update /etc/krb5.conf and change the following sections: \(kdc is pointing to domain controller of windows instance
 
-```
+```text
 [realms]
  CLOUDHUB.LOCAL = {
   kdc = win-ct1jf3e6fce.cloudhub.local
@@ -45,15 +42,15 @@ win-jump-east02.cloudhub.local
  cloudhub.local = CLOUDHUB.LOCAL
 ```
 
-##### Create a keberos ticket:
+### Create a keberos ticket:
 
-```
+```text
 kinit toby.matherly@CLOUDHUB.LOCAL
 ```
 
-##### Validate ticket:
+### Validate ticket:
 
-```
+```text
 klist
 Ticket cache: KEYRING:persistent:0:0
 Default principal: toby.matherly@CLOUDHUB.LOCAL
@@ -63,9 +60,9 @@ Valid starting       Expires              Service principal
     renew until 05/26/2017 15:19:43
 ```
 
-##### Test winrm:
+### Test winrm:
 
-```
+```text
 ansible win-jump-east02.cloudhub.local -m win_ping -i win-inventory
 win-jump-east02.cloudhub.local | SUCCESS => {
     "changed": false,
@@ -73,9 +70,9 @@ win-jump-east02.cloudhub.local | SUCCESS => {
 }
 ```
 
-#### Basic windows playbook to run powershell script:
+## Basic windows playbook to run powershell script:
 
-```
+```text
 - name: test
   hosts: windows
 
@@ -88,6 +85,4 @@ win-jump-east02.cloudhub.local | SUCCESS => {
     - name: run test script
       script: test_script.ps1
 ```
-
-
 

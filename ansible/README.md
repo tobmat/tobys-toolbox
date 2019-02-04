@@ -6,6 +6,10 @@ description: >-
 
 # Ansible
 
+#### ansible-doc
+
+Documentation plugin - see ansible-doc --help for more info
+
 #### ad-hoc commands
 
 ```text
@@ -17,6 +21,10 @@ $ ansible everyone -m copy \
 > -a 'content="This server is managed by Ansible.\n" dest=/etc/motd' --become
 
 $ ansible everyone -m command -a 'cat /etc/motd'
+
+# get list of ansible facts
+$ ansible <instance or group from inventory> -m setup -a filter=ansible_local
+
 
 ```
 
@@ -44,5 +52,20 @@ ansible all -i <inventory name> --list-hosts
   with_items:
      - { name: testuser1, uid: 1002, groups: "wheel, staff" }
      - { name: testuser2, uid: 1003, groups: staff }
+```
+
+#### Set module parameter to default if variable isn't defined
+
+```text
+test: "{{ test_value | default(omit) }}"  
+# if test_value doesn't exist parameter is set to default
+# playbook example:
+    - name: CVE-2016-5696 | Limit TCP challeng ACK limit
+      sysctl:
+        name: net.ipv4.tcp_challenge_ack_limit
+        value: 999999999
+        sysctl_set: yes
+        sysctl_file: "{{ sysctl_file | default(omit) }}"
+
 ```
 

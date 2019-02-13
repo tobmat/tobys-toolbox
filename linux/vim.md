@@ -37,6 +37,12 @@ show end of line:
 :set list
 ```
 
+autocomplete in vim
+
+```text
+<Tab> <C-X><C-F>
+```
+
 ## Plugin Manager Setup - This is for vimplug
 
 Find instructions here: [https://github.com/junegunn/vim-plug](https://github.com/junegunn/vim-plug) OR

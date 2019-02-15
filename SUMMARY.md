@@ -33,6 +33,7 @@
 * [IDM \(RH Identity Management\)](idm-rh-identity-management/README.md)
   * [Helpful Commands](idm-rh-identity-management/helpful-commands.md)
 * [Linux](linux/README.md)
+  * [shell](linux/shell.md)
   * [Sed](linux/sed.md)
   * [crontab](linux/crontab.md)
   * [User setup](linux/user-setup.md)

@@ -1,18 +1,24 @@
 # Git
 
-## \# push changes to external repo
+#### \# push changes to external repo
 
 `$ git push`
 
-## \# pull changes from external repo
+#### \# pull changes from external repo
 
 `$ git pull`
 
-## \# see git remote info
+#### \# see git remote info
 
 `$ git remote -v`
 
-## \# git commit info
+#### \# git commit info
 
 `$ git log`
+
+#### `# compare files from 2 branches`
+
+```text
+git diff dev master -- scripts/basic_win_boot_chef.ps1
+```
 

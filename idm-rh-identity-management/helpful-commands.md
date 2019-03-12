@@ -28,7 +28,7 @@ View Replication via CLI \# Need to know Directory Manager password
 
 ## List all HBAC rules
 
-`ipa hbacrule-find –all`
+`ipa hbacrule-find --all`
 
 ## Show specific rule
 
@@ -40,7 +40,7 @@ OR
 
 ## List all user logins
 
-ipauser-find \| grep "login"
+ipa user-find \| grep "login"
 
 ## Full info about a user
 

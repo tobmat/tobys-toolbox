@@ -16,6 +16,12 @@ git remote -v
 
 Reference: [https://help.github.com/articles/configuring-a-remote-for-a-fork/](https://help.github.com/articles/configuring-a-remote-for-a-fork/)
 
+Remove remote
+
+```text
+git remote rm <remote name>, example origin
+```
+
 ## Syncing a fork
 
 Fetch the branches and their respective commits from the upstream repository. Commits to master will be stored in a local branch, upstream/master:

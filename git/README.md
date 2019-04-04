@@ -22,3 +22,10 @@
 git diff dev master -- scripts/basic_win_boot_chef.ps1
 ```
 
+#### Pull latest changes to feature branch
+
+```text
+git checkout <feature branch>
+git merge master
+```
+

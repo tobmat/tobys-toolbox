@@ -8,6 +8,15 @@ Note: alias for vi to vim is created in /etc/profile.d/vim.sh
 
 ## Tricks
 
+Edit a file over ssh/scp
+
+```text
+localhost:~$ vim scp://user@remoteserver//etc/hosts
+
+# Note: Need to add the following to ~/.vimrc
+autocmd BufRead scp://* :set bt=acwrite
+```
+
 Get rid of ^M \(Usually found if copying a file from windows\):
 
 ```text
@@ -41,6 +50,12 @@ autocomplete in vim
 
 ```text
 <Tab> <C-X><C-F>
+```
+
+save and close
+
+```text
+:w! or :x
 ```
 
 ## Plugin Manager Setup - This is for vimplug

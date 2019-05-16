@@ -66,6 +66,14 @@ ipa user-find \| grep "login"
 
 `ipa dnszone-find`
 
+### `Set DNS Zones`
+
+```text
+ipa dnszone-add --name-from-ip=172.27.57.0/24 --allow-sync-ptr=true --default-ttl=60 --minimum=60
+```
+
+#### 
+
 ## List DNS records in a Zone
 
 `ipa dnsrecord-find <DNS Zone>`

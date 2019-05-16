@@ -1,5 +1,11 @@
 # Sed
 
+#### Edit from current line to the end
+
+```text
+:.,$s/pattern1/pattern2/g
+```
+
 remove all double-spaces from text: s/ \*/ /g
 
 ls \*\[0-9\] \| sed 's/\\(.\*pmt\\)\\(.\*\\)/mv -i \1\2 \1q\2/g' \| sh

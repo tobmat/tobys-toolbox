@@ -8,6 +8,16 @@ Note: alias for vi to vim is created in /etc/profile.d/vim.sh
 
 ## Tricks
 
+Replace windows double quotes with linux
+
+`:%s/[`Ctrl+v`u201c`Ctrl+v`u201d]/"/g`
+
+`This turns into this:`
+
+```text
+:%s/[“”]/"/g 
+```
+
 Edit a file over ssh/scp
 
 ```text

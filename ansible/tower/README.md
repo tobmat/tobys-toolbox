@@ -19,7 +19,11 @@ Test from server --
 
 ## Tips and Tricks
 
-[http://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html](http://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html)
+{% embed url="http://docs.ansible.com/ansible-tower/latest/html/administration/tipsandtricks.html" %}
+
+### Better formatted output through the api:
+
+[https://&lt;tower url&gt;/api/v2/jobs/&lt;tower job \#&gt;/stdout/](https://tower.karops.io/api/v2/jobs/4274/stdout/)
 
 ## Tower Server
 

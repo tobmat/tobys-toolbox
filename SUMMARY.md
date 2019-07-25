@@ -56,4 +56,6 @@
   * [VM stuck in MigrateTo status](rhv-redhat-virtualization/vm-stuck-in-migrateto-status.md)
 * [Satellite \(Redhat®\)](satellite-redhat-r/README.md)
   * [Hammer](satellite-redhat-r/hammer.md)
+* [Hashicorp](hashicorp/README.md)
+  * [Vault cheat sheet](hashicorp/vault-cheat-sheet.md)
 

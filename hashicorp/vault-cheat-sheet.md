@@ -41,5 +41,13 @@ vault kv put <secret path>/<key name> <field name>=<field value>
 
 # list secret store details
 vault secrets list --detailed
+
+# delete secret
+vault delete secret/mgmt/infra/avi/test
+OR
+# in v2 deleted secrets can be restored if this command was used
+vault kv delete secret/mgmt/infra/avi/test
+
+
 ```
 

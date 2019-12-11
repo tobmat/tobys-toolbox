@@ -48,6 +48,7 @@
   * [Forks](git/forks.md)
   * [Development Process](git/development-process.md)
   * [Setup](git/setup.md)
+* [Kubernetes](kubernetes.md)
 * [Mac](mac.md)
 * [Node.js](nodejs.md)
 * [Nuage](nuage.md)

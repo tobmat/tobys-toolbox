@@ -86,3 +86,9 @@ win-jump-east02.cloudhub.local | SUCCESS => {
       script: test_script.ps1
 ```
 
+### Troubleshooting
+
+#### ansible kerberos hangs on winrm connection
+
+This can be resolved by installing **pexpect** with pip
+

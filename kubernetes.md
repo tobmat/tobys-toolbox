@@ -17,3 +17,9 @@ kubectl --kubeconfig /tmp/eks.test get pods -n azure-devops -o jsonpath="{..imag
    2 harbor.paas.karops.io/infrastructure/adoagent:73526
 ```
 
+List all resources
+
+```text
+kubectl api-resources --verbs=list --namespaced -o name   | xargs -n 1 kubectl get --show-kind --ignore-not-found  -n svc-accts
+```
+

@@ -1,4 +1,18 @@
+---
+description: Cheat sheet
+---
+
 # Git
+
+#### \# git stash
+
+```bash
+# stash files locally
+git stash
+
+# retrieve stashed files
+git stash pop
+```
 
 #### \# push changes to external repo
 

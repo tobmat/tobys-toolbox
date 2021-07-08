@@ -1,3 +1,7 @@
+---
+description: Command examples
+---
+
 # Azure
 
 **Point to different subscription**
@@ -32,6 +36,13 @@ az vm list -d  --query "[?powerState=='VM running']" --query "[].[name,powerStat
 
 ```text
 az network public-ip show -n tower01-ip -g test-pcc-ch-ansible --query ipAddress -o tsv
+```
+
+#### List info about VMs:
+
+```text
+sub=<subscription_id>
+az vm list --query "[?storageProfile.osDisk.osType=='Windows'].{Name:name, Location:location, ResourceGroup: resourceGroup, OS:storageProfile.osDisk.osType, Publisher:storageProfile.imageReference.publisher, SKU:storageProfile.imageReference.sku, Admin:osProfile.adminUsername}" -o table --subscription $sub
 ```
 
 ## Update template on resource group:

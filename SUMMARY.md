@@ -45,6 +45,7 @@
   * [Console](idm-rh-identity-management/console.md)
   * [Helpful Commands](idm-rh-identity-management/helpful-commands.md)
 * [Linux](linux/README.md)
+  * [OpenLdap](linux/openldap.md)
   * [Identity](linux/identity.md)
   * [Command Line](linux/command-line.md)
   * [SNMP](linux/snmp.md)

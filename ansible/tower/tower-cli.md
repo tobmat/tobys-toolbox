@@ -6,7 +6,6 @@ description: Tower Command Line interface
 
 ### List ldap settings
 
-```text
+```
 tower-cli setting list -c ldap -f json
 ```
-

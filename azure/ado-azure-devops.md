@@ -2,7 +2,7 @@
 description: Reference Info for Azure Devops
 ---
 
-# ADO \(Azure Devops\)
+# ADO (Azure Devops)
 
 Reference Links
 
@@ -19,6 +19,4 @@ CLI
 Running agent in docker
 
 {% embed url="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/docker?view=azure-devops" %}
-
-
 

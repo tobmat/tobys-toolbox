@@ -12,7 +12,7 @@
 
 `klist`
 
-View Replication via CLI \# Need to know Directory Manager password
+View Replication via CLI # Need to know Directory Manager password
 
 **Domain**
 
@@ -40,7 +40,7 @@ OR
 
 ## List all user logins
 
-ipa user-find \| grep "login"
+ipa user-find | grep "login"
 
 ## Full info about a user
 
@@ -68,11 +68,11 @@ ipa user-find \| grep "login"
 
 ### `Set DNS Zones`
 
-```text
+```
 ipa dnszone-add --name-from-ip=172.27.57.0/24 --allow-sync-ptr=true --default-ttl=60 --minimum=60
 ```
 
-#### 
+####
 
 ## List DNS records in a Zone
 
@@ -93,4 +93,3 @@ ipa dnszone-add --name-from-ip=172.27.57.0/24 --allow-sync-ptr=true --default-tt
 ## Show sudo Rule
 
 `ipa sudorule-show <rule_name>`
-

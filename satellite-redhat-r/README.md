@@ -5,5 +5,5 @@ description: >-
   security, and compliant with various standards.
 ---
 
-# Satellite \(Redhat®\)
+# Satellite (Redhat®)
 

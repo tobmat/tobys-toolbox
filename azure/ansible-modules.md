@@ -26,5 +26,4 @@ Install ansible engine
 
 export AZURE\_TAGS=pcc-eus-ch-tower - I set tag to resource group
 
-ansible -i azure\_rm.py pcc-eus-ch-tower -m ping --private-key ~/.ssh/tower2 -u ansible
-
+ansible -i azure\_rm.py pcc-eus-ch-tower -m ping --private-key \~/.ssh/tower2 -u ansible

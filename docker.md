@@ -6,7 +6,7 @@ cd /etc/yum.repos.d/
 
 vi docker.repo
 
-\[dockerrepo\]
+\[dockerrepo]
 
 name= Docker Repo
 
@@ -32,7 +32,7 @@ docker images
 
 usermod -a -G docker user
 
-cat /etc/group \| grep docker
+cat /etc/group | grep docker
 
 yum install elinks -y
 
@@ -94,7 +94,7 @@ docker rm stoic\_hamilton
 
 docker rm agitated\_franklin
 
-docker rm $\(docker ps -a -q\)
+docker rm $(docker ps -a -q)
 
 docker run -d --name=WebServer1 -P nginx
 
@@ -127,4 +127,3 @@ docker build -t tobmat123/myapache .
 docker run -d tobmat123/myapache
 
 docker run -d -p 8080:80 --name=toby -v /home/user/www:/usr/share/nginx/html nginx
-

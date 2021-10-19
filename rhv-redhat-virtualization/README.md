@@ -5,11 +5,13 @@ description: >-
   Kernel-based Virtual Machine (KVM).
 ---
 
-# RHV \(Redhat Virtualization\)
+# RHV (Redhat Virtualization)
 
-{% page-ref page="maintenance-steps.md" %}
+{% content-ref url="maintenance-steps.md" %}
+[maintenance-steps.md](maintenance-steps.md)
+{% endcontent-ref %}
 
-{% page-ref page="vm-stuck-in-migrateto-status.md" %}
-
-
+{% content-ref url="vm-stuck-in-migrateto-status.md" %}
+[vm-stuck-in-migrateto-status.md](vm-stuck-in-migrateto-status.md)
+{% endcontent-ref %}
 

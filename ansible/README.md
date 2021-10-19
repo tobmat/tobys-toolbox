@@ -12,7 +12,7 @@ Documentation plugin - see ansible-doc --help for more info
 
 #### ad-hoc commands
 
-```text
+```
 ansible <host reference> -i <inventory> -m <module> -a <module attributes>
 # EXAMPLES
 $ ansible everyone -m command -a 'id'
@@ -48,7 +48,7 @@ ansible all -i <inventory name> --list-hosts
 
 #### complex with\_items:
 
-```text
+```
   with_items:
      - { name: testuser1, uid: 1002, groups: "wheel, staff" }
      - { name: testuser2, uid: 1003, groups: staff }
@@ -56,7 +56,7 @@ ansible all -i <inventory name> --list-hosts
 
 #### Set module parameter to default if variable isn't defined
 
-```text
+```
 test: "{{ test_value | default(omit) }}"  
 # if test_value doesn't exist parameter is set to default
 # playbook example:
@@ -68,4 +68,3 @@ test: "{{ test_value | default(omit) }}"
         sysctl_file: "{{ sysctl_file | default(omit) }}"
 
 ```
-

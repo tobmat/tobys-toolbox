@@ -2,7 +2,7 @@
 
 ### Vault setup
 
-```text
+```
 # add to bashrc
 complete -C /usr/local/bin/vault vault. # add auto-complete for vault commands
 export VAULT_ADDR='https://<vault url>'. # default vault address so we don’t have to pass on login
@@ -13,13 +13,13 @@ Help - Access help for any command via adding --help
 
 #### Login
 
-```text
+```
 vault login -method=ldap username=toby.matherly
 ```
 
 #### Helpful commands
 
-```text
+```
 # lookup current token
 vault token lookup
 
@@ -50,4 +50,3 @@ vault kv delete secret/mgmt/infra/avi/test
 
 
 ```
-

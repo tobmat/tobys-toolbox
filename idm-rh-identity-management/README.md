@@ -1,6 +1,6 @@
-# IDM \(RH Identity Management\)
+# IDM (RH Identity Management)
 
-{% page-ref page="helpful-commands.md" %}
-
-
+{% content-ref url="helpful-commands.md" %}
+[helpful-commands.md](helpful-commands.md)
+{% endcontent-ref %}
 

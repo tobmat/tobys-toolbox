@@ -8,7 +8,7 @@ description: Tips for working on Mac
 
 [https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-powershell-core-on-macos?view=powershell-6](https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-powershell-core-on-macos?view=powershell-6)
 
-```text
+```
 pwsh
 ```
 
@@ -32,7 +32,6 @@ Connect to Windows File share
 * Select connect to server
 * Example:
 
-```text
+```
 smb://qa/automation.latest_systest/scripts/
 ```
-

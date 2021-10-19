@@ -10,11 +10,11 @@ for example: openshiftdev.oncaas.com
 
 1. log into each master instance
 2. copy wildcard.crt and wildcard.key to /etc/origin/master
-3. update master config file \(/etc/origin/master/master-config.yaml\)
+3. update master config file (/etc/origin/master/master-config.yaml)
 4. replace elb name for CNAME entry above.  Search public to find all entries
 5. Add code to end of following sections: assetConfig, servingInfo
 
-```text
+```
     namedCertificates:
       - certFile: wildcard.example.com.crt
         keyFile: wildcard.example.com.key
@@ -24,15 +24,15 @@ for example: openshiftdev.oncaas.com
 
 1. Restart atomic-openshift-master-api service
 
-```text
+```
 systemctl restart atomic-openshift-master-api
 ```
 
-## Add new users \(must run on all master instances\):
+## Add new users (must run on all master instances):
 
 created a script to add new users from file:
 
-```text
+```
 ##contents of new_users.sh
 
 # add new users
@@ -60,7 +60,7 @@ done < $1
 
 ## Helpful commands:
 
-```text
+```
 # validate user pw
 htpasswd -v  /etc/origin/master/htpasswd admin
 
@@ -80,10 +80,9 @@ htpasswd -b  /etc/origin/master/htpasswd admin
 
 ## Login with command line tool:
 
-```text
+```
 oc login https://<openshift_url>:8443 -u username
 
 # logout
 oc logout
 ```
-

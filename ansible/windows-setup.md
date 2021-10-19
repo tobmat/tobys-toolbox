@@ -2,7 +2,7 @@
 
 ## windows machines
 
-1. Set-ExecutionPolicy Bypass \(or setup to use certificates\)
+1. Set-ExecutionPolicy Bypass (or setup to use certificates)
 2. Enable-PSRemoting -Force
 3. winrm set winrm/config/service @{AllowUnencrypted="true"}
 4. AWS - add security group rule to allow traffic on 5985
@@ -10,13 +10,13 @@
 ## ansible server
 
 1. yum -y install gcc python-devel krb5-devel krb5-workstation
-2. pip install [https://github.com/diyan/pywinrm/archive/master.zip\#egg=pywinrm](https://github.com/diyan/pywinrm/archive/master.zip#egg=pywinrm)
+2. pip install [https://github.com/diyan/pywinrm/archive/master.zip#egg=pywinrm](https://github.com/diyan/pywinrm/archive/master.zip#egg=pywinrm)
 3. pip install python-kerberos
 4. pip install requests-kerberos
 
 ### create windows inventory file containing the following:
 
-```text
+```
 [windows]
 win-jump-east02.cloudhub.local
 
@@ -26,11 +26,11 @@ win-jump-east02.cloudhub.local
  ansible_ssh_port=5985
 ```
 
-### Change /etc/resolv.conf to use same DNS server as windows server you are trying to access \(for AWS\)
+### Change /etc/resolv.conf to use same DNS server as windows server you are trying to access (for AWS)
 
-### Update /etc/krb5.conf and change the following sections: \(kdc is pointing to domain controller of windows instance
+### Update /etc/krb5.conf and change the following sections: (kdc is pointing to domain controller of windows instance
 
-```text
+```
 [realms]
  CLOUDHUB.LOCAL = {
   kdc = win-ct1jf3e6fce.cloudhub.local
@@ -44,13 +44,13 @@ win-jump-east02.cloudhub.local
 
 ### Create a keberos ticket:
 
-```text
+```
 kinit toby.matherly@CLOUDHUB.LOCAL
 ```
 
 ### Validate ticket:
 
-```text
+```
 klist
 Ticket cache: KEYRING:persistent:0:0
 Default principal: toby.matherly@CLOUDHUB.LOCAL
@@ -62,7 +62,7 @@ Valid starting       Expires              Service principal
 
 ### Test winrm:
 
-```text
+```
 ansible win-jump-east02.cloudhub.local -m win_ping -i win-inventory
 win-jump-east02.cloudhub.local | SUCCESS => {
     "changed": false,
@@ -72,7 +72,7 @@ win-jump-east02.cloudhub.local | SUCCESS => {
 
 ## Basic windows playbook to run powershell script:
 
-```text
+```
 - name: test
   hosts: windows
 
@@ -91,4 +91,3 @@ win-jump-east02.cloudhub.local | SUCCESS => {
 #### ansible kerberos hangs on winrm connection
 
 This can be resolved by installing **pexpect** with pip
-

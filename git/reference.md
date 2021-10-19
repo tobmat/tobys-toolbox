@@ -2,7 +2,7 @@
 
 Feature Branch Info:
 
-[https://www.atlassian.com/git/tutorials/comparing-workflows\#feature-branch-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow)
+[https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow)
 
 [http://nvie.com/posts/a-successful-git-branching-model/](http://nvie.com/posts/a-successful-git-branching-model/)
 
@@ -30,7 +30,6 @@ Here is a breakdown from a command line perspective:
 
 \# merge feature branch, --no-ff flag causes the merge to always create a new commit object
 
-$ git checkout &lt;branchmerginginto&gt;
+$ git checkout \<branchmerginginto>
 
 $ git merge --no-ff myfeature
-

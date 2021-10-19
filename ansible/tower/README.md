@@ -7,7 +7,7 @@
 * On tower server copy an existing inventory structure in inventory/ directory
 * execute this command:
 
-```text
+```
 tower-manage inventory_import --source=inventory/ --inventory-name="<inventory name>"
 ```
 
@@ -23,7 +23,7 @@ Test from server --
 
 ### Better formatted output through the api:
 
-[https://&lt;tower url&gt;/api/v2/jobs/&lt;tower job \#&gt;/stdout/](https://tower.karops.io/api/v2/jobs/4274/stdout/)
+[https://\<tower url>/api/v2/jobs/\<tower job #>/stdout/](https://tower.karops.io/api/v2/jobs/4274/stdout/)
 
 ## Tower Server
 
@@ -36,4 +36,3 @@ ansible-tower-service - tower service
 /etc/openldap/certs/ - location for your wildcard certs
 
 /var/lib/pgsql - location of database if local
-

@@ -35,4 +35,3 @@ note: do not install anything in /var/lib/awx/venv/awx/lib venv. Not needed and 
 `4. pip install ansible[azure] --upgrade --force`
 
 `5. deactivate`
-

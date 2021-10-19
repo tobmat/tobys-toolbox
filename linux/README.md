@@ -2,13 +2,15 @@
 
 #### sudo troubleshooting
 
-[https://docs.pagure.org/SSSD.sssd/users/sudo\_troubleshooting.html](https://docs.pagure.org/SSSD.sssd/users/sudo_troubleshooting.html)
+[https://docs.pagure.org/SSSD.sssd/users/sudo\_troubleshooting.html](https://docs.pagure.org/SSSD.sssd/users/sudo\_troubleshooting.html)
 
 {% embed url="https://docs.pagure.org/SSSD.sssd/users/troubleshooting.html" %}
 
-{% page-ref page="identity.md" %}
+{% content-ref url="identity.md" %}
+[identity.md](identity.md)
+{% endcontent-ref %}
 
-{% page-ref page="command-line.md" %}
-
-
+{% content-ref url="command-line.md" %}
+[command-line.md](command-line.md)
+{% endcontent-ref %}
 

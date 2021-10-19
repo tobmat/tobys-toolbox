@@ -1,6 +1,6 @@
 # cluster
 
-[https://docs.ansible.com/ansible-tower/3.2.6/html/administration/proxy-support.html\#proxy-support](https://docs.ansible.com/ansible-tower/3.2.6/html/administration/proxy-support.html#proxy-support)
+[https://docs.ansible.com/ansible-tower/3.2.6/html/administration/proxy-support.html#proxy-support](https://docs.ansible.com/ansible-tower/3.2.6/html/administration/proxy-support.html#proxy-support)
 
 Use settings api to change - see api page
 
@@ -23,4 +23,3 @@ Use settings api to change - see api page
 `"REMOTE_HOST"`
 
 `]'`
-

@@ -16,7 +16,7 @@
 
 `awselbdescribe-load-balancers --query 'LoadBalancerDescriptions[*].SecurityGroups[*]' --no-paginate --output text |tr'\t' '\n' | sort |uniq> elb.txt`
 
-**Get list of security groups rules for given security group id, format \(remove 1st line, join every 2 lines together, replace tabs and spaces with comma\):**
+**Get list of security groups rules for given security group id, format (remove 1st line, join every 2 lines together, replace tabs and spaces with comma):**
 
 `awsec2 describe-security-groups --group-ids sg-0abf8c73 --output text |sed-n '1!p' |sed'N;s/\n/ /' |tr'\t' ',' |tr' ' ','`
 
@@ -29,4 +29,3 @@
 \# role-session-name is just name you give to the session
 
 \# Can only be run from user or role that has trust established with role you want to assume
-

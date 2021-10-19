@@ -10,9 +10,8 @@ STS enables you to assume a role and it's access with another user and role. Our
 
 Example: see ansible-sts
 
-For User to assume ansible-sts role \(Using ansible-service user as example\):
+For User to assume ansible-sts role (Using ansible-service user as example):
 
 1. create trust with ansible-service user from ansible-sts role
 2. add ansible-service user to tower creds
 3. include ansible-service creds on template where sts assume is needed
-

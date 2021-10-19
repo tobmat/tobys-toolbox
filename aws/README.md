@@ -1,8 +1,8 @@
 # AWS
 
-## **aws command line setup \(awscli\)**
+## **aws command line setup (awscli)**
 
-* **install \(**[**http://docs.aws.amazon.com/cli/latest/userguide/installing.html\#install-with-pip**](http://docs.aws.amazon.com/cli/latest/userguide/installing.html#install-with-pip)**\)**
+* **install (**[**http://docs.aws.amazon.com/cli/latest/userguide/installing.html#install-with-pip**](http://docs.aws.amazon.com/cli/latest/userguide/installing.html#install-with-pip)**)**
 
 `sudo pip install awscli`
 
@@ -16,13 +16,13 @@ export AWS\_ACCESS\_KEY\_ID=
 
 #### List security groups that have wide open ip rules and only return certain values with query:
 
-```text
+```
 aws ec2 describe-security-groups --filters Name=ip-permission.cidr,Values='0.0.0.0/0' --query 'SecurityGroups[*].{Name:GroupName,VPCID:VpcId,SecurityGroupName:GroupId}'
 ```
 
 #### List Users in text format:
 
-```text
+```
 aws iam list-users --output text  # other valid options are table, and json(default)
 ```
 
@@ -35,4 +35,3 @@ aws iam list-users --output text  # other valid options are table, and json(defa
 #### **List all records in zone:**
 
 `aws route53 list-resource-record-sets --hosted-zone-id <id>`
-

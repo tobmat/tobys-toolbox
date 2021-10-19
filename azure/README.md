@@ -10,44 +10,44 @@ description: Command examples
 
 **List accounts**
 
-```text
+```
 az account list --output table
 ```
 
 **List available VM images:**
 
-```text
+```
 az vm image list --output table
 ```
 
 **List VM sku's:**
 
-```text
+```
 az vm list-skus --output table
 ```
 
 **Get VM size of running VMs**
 
-```text
+```
 az vm list -d  --query "[?powerState=='VM running']" --query "[].[name,powerState,hardwareProfile.vmSize]" -o tsv
 ```
 
 **Get public IP:**
 
-```text
+```
 az network public-ip show -n tower01-ip -g test-pcc-ch-ansible --query ipAddress -o tsv
 ```
 
 #### List info about VMs:
 
-```text
+```
 sub=<subscription_id>
 az vm list --query "[?storageProfile.osDisk.osType=='Windows'].{Name:name, Location:location, ResourceGroup: resourceGroup, OS:storageProfile.osDisk.osType, Publisher:storageProfile.imageReference.publisher, SKU:storageProfile.imageReference.sku, Admin:osProfile.adminUsername}" -o table --subscription $sub
 ```
 
 ## Update template on resource group:
 
-```text
+```
 az group update -n '{{ resourceGroupName }}' --set tags.environment='{{ environmentTag }}'
 ```
 
@@ -66,7 +66,7 @@ I was able to get your code working by changing the parameters json. Apparently,
 
 **Storage:**
 
-Get connection string:  
+Get connection string:\
 `az storage account show-connection-string --name <storage_account> -g <resource_group>`
 
 OR
@@ -97,11 +97,10 @@ From network:
 
 1. select subnet to enable service endpoint
 2. select Microsoft.Storage
-3. save  
+3. save &#x20;
 
 From storage account: under 'Firewalls and virtual networks'
 
 1. change 'Allow access from' to Selected networks
 2. click '+ Add existing virtual network', select network/subnet that you added storage endpoint to.
 3. save
-

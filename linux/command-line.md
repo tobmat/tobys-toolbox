@@ -4,7 +4,7 @@ description: Notes about available linux command line utilities
 
 # Command Line
 
-#### id &lt;username&gt; - displays all the groups associated with a user. \(refreshes when a user logs into a system\)
+#### id \<username> - displays all the groups associated with a user. (refreshes when a user logs into a system)
 
 ```bash
 toby.matherly CORP-L-66FJG5J -> id toby.matherly
@@ -36,6 +36,4 @@ sss_cache -E   # Invalidate ALL cached entries, forces refresh from IDM
 
 sss_cache -u <user>   # Invalidate for specific user, forces refresh from IDM
 ```
-
-
 

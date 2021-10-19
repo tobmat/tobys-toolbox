@@ -14,22 +14,22 @@ Replace windows double quotes with linux
 
 `This turns into this:`
 
-```text
+```
 :%s/[“”]/"/g 
 ```
 
 Edit a file over ssh/scp
 
-```text
+```
 localhost:~$ vim scp://user@remoteserver//etc/hosts
 
 # Note: Need to add the following to ~/.vimrc
 autocmd BufRead scp://* :set bt=acwrite
 ```
 
-Get rid of ^M \(Usually found if copying a file from windows\):
+Get rid of ^M (Usually found if copying a file from windows):
 
-```text
+```
 :ed ++ff=dos %
 
 OR
@@ -39,32 +39,32 @@ OR
 
 sort a file:
 
-```text
+```
 :%!sort
 ```
 
-actions between "{" or "\[" or "\(":
+actions between "{" or "\[" or "(":
 
-```text
+```
 y%   # copy lines including the brackets
 d%   # delete lines including the brackets
 ```
 
 show end of line:
 
-```text
+```
 :set list
 ```
 
 autocomplete in vim
 
-```text
+```
 <Tab> <C-X><C-F>
 ```
 
 save and close
 
-```text
+```
 :w! or :x
 ```
 
@@ -72,9 +72,9 @@ save and close
 
 Find instructions here: [https://github.com/junegunn/vim-plug](https://github.com/junegunn/vim-plug) OR
 
-Setup ~/.vimrc file to autoinstall vim-plug, and autoload plugin files:
+Setup \~/.vimrc file to autoinstall vim-plug, and autoload plugin files:
 
-```text
+```
 " Silent vim-plug setup and initial PlugInstall
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -101,9 +101,9 @@ call plug#end()
 
 ### Nerdtree - vim file manager, can open multiple files at ones
 
-Setup - I have the following pieces in my ~/.vimrc file:
+Setup - I have the following pieces in my \~/.vimrc file:
 
-```text
+```
 "Show hidden files in NerdTree
 "let NERDTreeShowHidden=1
 
@@ -117,7 +117,7 @@ map <F2> :NERDTreeToggle<CR>
 
 Cheatsheet
 
-```text
+```
 Lets open some windows
 s open new vertical split window
 i open new horizontal spilt window
@@ -165,9 +165,9 @@ e: explore selected dir
 
 ### Syntastic - checks syntax for many common scripting languages
 
-~/.vimrc setup
+\~/.vimrc setup
 
-```text
+```
 " Syntastic Settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -179,11 +179,11 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 ```
 
-## ~/.vimrc
+## \~/.vimrc
 
 vimrc file setup to customize vim. Here are the current ones I'm using:
 
-```text
+```
 " turn off smart indentation when pasting - this will turn off auto comment and indent when pasting
 set pastetoggle=<F2>
 
@@ -193,4 +193,3 @@ set paste
 " shortcut to turn off line numbers
 map <silent> con :set number!<CR>
 ```
-

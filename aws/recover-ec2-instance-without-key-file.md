@@ -28,4 +28,3 @@ AWS Console
 1. Detach the secondary volume from instance.
 2. Again attach the volume back to our recovery instance. Start the instance.
 3. Access instance with newly added key.
-

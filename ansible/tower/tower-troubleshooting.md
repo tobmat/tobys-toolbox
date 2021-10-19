@@ -2,15 +2,15 @@
 
 ## Non-supported Database version
 
-**Issue:** Error when attempting backup  setup.sh -b 
+**Issue:** Error when attempting backup  setup.sh -b&#x20;
 
 **Error:** "stderr": "pg\_dump: server version: 10.5; pg\_dump version: 9.6.11\npg\_dump: aborting because of server version mismatch"
 
 **Problem:**  I installed non-supported version of postgres.  Tower worked but that backup functionality didn't.
 
-**Solution:**  \(Since you can't do a backup you can use these  commands to dump configuration.  Note - secrets, passwords, ssh keys will not be in the output and need to be re-added manually.\)
+**Solution:**  (Since you can't do a backup you can use these  commands to dump configuration.  Note - secrets, passwords, ssh keys will not be in the output and need to be re-added manually.)
 
-```text
+```
 tower-cli receive --all > tower-backup-20190123.json  # export tower configuration
 tower-cli receive --credential all > tower-bu-creds.json #export all credentials
 # Delete external DB
@@ -62,4 +62,3 @@ rabbitmqctl cluster\_status
 1. yum remove ansible-tower\*
 2. On all nodes: rm -rf /var/lib/awx/venv/\*
 3. ./setup.sh
-

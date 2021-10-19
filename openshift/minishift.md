@@ -6,15 +6,15 @@ I built minishift on centos7, running KVM. Following the instructions above.
 
 ## Install libvirt and qemu-kvm:
 
-```text
+```
 yum install libvirt virt-manager bridge-utils qemu-kvm
 systemctl enable libvirtd
 systemctl start libvirtd
 ```
 
-## Install and test docker machine \(see [here](https://github.com/dhiltgen/docker-machine-kvm#quick-start-instructions) for more details\):
+## Install and test docker machine (see [here](https://github.com/dhiltgen/docker-machine-kvm#quick-start-instructions) for more details):
 
-```text
+```
 curl -L https://github.com/docker/machine/releases/download/v0.12.2/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine && \
 chmod +x /tmp/docker-machine && \
 sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
@@ -30,7 +30,7 @@ docker-machine start myengine0
 
 ## Install minishift:
 
-```text
+```
 yum install wget -y
 cd /tmp
 wget https://github.com/minishift/minishift/releases/download/v1.3.1/minishift-1.3.1-linux-amd64.tgz
@@ -41,14 +41,14 @@ minishift start
 
 ## Activate oc:
 
-```text
+```
 minishift oc-env
 export PATH="/root/.minishift/cache/oc/v1.5.1:$PATH"
 ```
 
 ## Setup linux bridge to be able to access minishift from network:
 
-```text
+```
 virsh iface-bridge enp0s20f0 br0  # this creates the br0 bridge and update enp0s20f0 interface to point to 
                                   # the new bridge.  It creates the files in network-scripts and restarts network.
 
@@ -58,7 +58,7 @@ brctl show
 
 ## Replace default network on minishift vm with bridge interface:
 
-```text
+```
 virsh edit minishift
 
 #search for default and replace with the following:
@@ -69,7 +69,7 @@ virsh edit minishift
 
 ## Update openshift config to use public network:
 
-```text
+```
 minishift ssh
 # determine public ip
 ip a # find ip on public network
@@ -92,9 +92,9 @@ minishift start
 
 ## Webhooks:
 
-For testing in lab that is not internet facing I used [ultrahook.](http://www.ultrahook.com/)
+For testing in lab that is not internet facing I used [ultrahook.](http://www.ultrahook.com)
 
-```text
+```
 # it is a gem so to prep centos7 I installed the following
 
 yum install ruby-devel ruby gcc -y
@@ -111,7 +111,7 @@ ultrahook testhook https://192.168.88.233:8443/oapi/v1/namespaces/wfproject/buil
 
 The project in the book to launch the docker image for tomcat was failing / restarting when I tried to bring it up.
 
-```text
+```
 oc status -v   # this command provides troubleshooting steps.  In this case the default security policy
                # prevented containers from being run as root user which happens to be required for tomcat8.
 
@@ -124,4 +124,3 @@ oc adm policy add-scc-to-user anyuid -n tomcat8 -z default
 #NOTE - need to use this login first:
 oc login -u system:admin
 ```
-

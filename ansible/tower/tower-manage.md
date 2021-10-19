@@ -15,4 +15,3 @@
 `tower-manage deprovision_node --name <ip-address>`
 
 \# Note: should also remove node from inventory script that setup.sh uses for upgrades.
-

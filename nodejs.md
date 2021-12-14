@@ -10,7 +10,7 @@ forever stop chef_bridge.js
 forever logs – see path to log files
 ```
 
-**testing - **will restart on file changes
+**testing -** will restart on file changes
 
 ```
 npm install -g nodemon

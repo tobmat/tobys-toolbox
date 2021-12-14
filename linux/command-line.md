@@ -37,3 +37,8 @@ sss_cache -E   # Invalidate ALL cached entries, forces refresh from IDM
 sss_cache -u <user>   # Invalidate for specific user, forces refresh from IDM
 ```
 
+#### Get octal permissions
+
+```
+stat -c '%A %a %n' filename
+```

@@ -4,7 +4,7 @@
 
 `cd ansible-tower-setup-<tower_version> # example -ansible-tower-setup-3.2.1`
 
-**Run setup command with backup (-b) flag: **
+**Run setup command with backup (-b) flag:**&#x20;
 
 ```
 ./setup.sh -b # Will only run on one of the tower instances and will copy the backup to the local directory.
